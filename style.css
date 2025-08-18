@@ -1,3 +1,113 @@
+:root {
+    --color-vino: #5A1E5C;
+    --color-violeta-oscuro: #3B0F3D;
+    --color-violeta-medio: #7A2C7D;
+    --color-violeta-claro: #C28AC4;
+    --color-lila: #E8D7EB;
+    --color-blanco: #F8F6F9;
+    --color-negro: #1A1A1C;
+}
+
+
 * {
     box-sizing: border-box;
+    font-family: "Merriweather", serif;
+}
+
+main {
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+}
+
+h1,
+h2,
+h3,
+header div a {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/* Textos y backgrounds */
+
+.text-vino {
+    color: var(--color-vino);
+}
+
+.text-violeta-oscuro {
+    color: var(--color-violeta-oscuro);
+}
+
+.text-violeta-medio {
+    color: var(--color-violeta-medio);
+}
+
+.text-violeta-claro {
+    color: var(--color-violeta-claro);
+}
+
+.text-lila {
+    color: var(--color-lila);
+}
+
+.text-blanco {
+    color: var(--color-blanco);
+}
+
+.text-negro {
+    color: var(--color-negro);
+}
+
+.bg-vino {
+    background-color: var(--color-vino);
+}
+
+.bg-violeta-oscuro {
+    background-color: var(--color-violeta-oscuro);
+}
+
+.bg-violeta-medio {
+    background-color: var(--color-violeta-medio);
+}
+
+.bg-violeta-claro {
+    background-color: var(--color-violeta-claro);
+}
+
+.bg-lila {
+    background-color: var(--color-lila);
+}
+
+.bg-blanco {
+    background-color: var(--color-blanco);
+}
+
+.bg-negro {
+    background-color: var(--color-negro);
+}
+
+/* Botones */
+
+.boton-primario {
+    background-color: var(--color-violeta-medio);
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0px 2px 8px 0px #0000004D;
+    color: var(--color-blanco);
+    padding: 0.875rem 3rem;
+}
+
+/* Menu */
+
+.menu-lateral {
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.menu-lateral.open {
+    transform: translateX(0);
+}
+
+/* Hero */
+
+.hero {
+    background: linear-gradient(119.89deg, rgba(239, 224, 219, 0.8) -31.4%, rgba(53, 38, 49, 0.8) 36.22%);
 }
