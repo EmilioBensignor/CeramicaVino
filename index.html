@@ -18,15 +18,20 @@
 <body>
     <!-- Header -->
     <header
-        class="flex flex-col items-center md:flex-row md:justify-between gap-4 md:gap-8 sticky top-0 z-50 bg-vino text-blanco py-4 md:py-6 px-6 md:px-10">
-        <div class="w-full flex justify-center items-center">
-            <button id="menu" class="absolute left-6 md:left-10 z-50 outline-none">
+        class="flex flex-col items-center md:flex-row md:justify-between gap-4 md:gap-8 sticky top-0 z-50 bg-vino text-blanco py-4 md:py-6 px-6 md:px-10 lg:px-16">
+        <div class="w-full flex justify-center lg:justify-between items-center">
+            <button id="menu" class="lg:hidden absolute left-6 md:left-10 z-50 outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                         stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <a href="/index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
+            <a href="/index.html" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
+            <nav class="hidden lg:flex">
+                <ul>
+                    <li><a href="/nosotros.html" class="lg:text-xl">Nosotros</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="w-full md:w-1/2 hidden h-12 bg-red-500"></div>
     </header>
@@ -51,13 +56,13 @@
     </div>
     <main class="flex flex-col bg-lila text-violeta-extra-oscuro">
         <!-- Hero -->
-        <section class="w-full flex flex-col md:flex-row items-center gap-4 md:gap-8">
+        <section class="w-full flex flex-col md:flex-row items-center gap-4 md:gap-8 md:-mt-16 lg:-mt-20">
             <img src="./images/Ceramica-Vino.png" alt="Ceramica y Vino"
-                class="w-full h-[28rem] sm:h-[40rem] object-cover" />
+                class="w-full h-[28rem] sm:h-[40rem] lg:h-screen object-cover" />
             <div
-                class="hero w-full h-[28rem] sm:h-[40rem] flex flex-col justify-center items-center text-center gap-6 md:gap-10 absolute bg-negro/50 text-blanco p-6">
-                <h1 class="text-4xl sm:text-5xl">VOS, YO, ARTE Y VINITO</h1>
-                <p class="max-w-sm sm:max-w-lg sm:text-xl">
+                class="hero w-full h-[28rem] sm:h-[40rem] lg:h-screen flex flex-col justify-center items-center text-center gap-6 md:gap-10 absolute bg-negro/50 text-blanco p-6">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">VOS, YO, ARTE Y VINITO</h1>
+                <p class="max-w-sm sm:max-w-lg lg:max-w-3xl sm:text-xl lg:text-2xl">
                     Un espacio donde el arte de la cerámica se mezcla con la magia del
                     vino. Encuentros únicos para crear, compartir y disfrutar.
                 </p>
@@ -65,52 +70,52 @@
             </div>
         </section>
         <!-- Experiencia paso a paso -->
-        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 bg-lila p-6 md:p-10">
-            <h2 class="text-2xl sm:text-3xl text-violeta-oscuro">
+        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 bg-lila p-6 md:p-10 lg:py-12 lg:px-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
                 Viví una noche creativa: arcilla, música y una copa
             </h2>
-            <div class="flex justify-center flex-wrap gap-6 md:gap-8">
-                <div class="max-w-2xs flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md p-6">
-                    <div class="flex flex-col items-center gap-4">
+            <div class="lg:w-full flex lg:grid lg:grid-cols-3 justify-center flex-wrap gap-6 md:gap-8">
+                <div class="max-w-2xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md p-6">
+                    <div class="lg:h-full flex flex-col lg:justify-between items-center gap-4">
                         <img src="./images/experiencia/Elegi-tu-taller.png" alt="Elegi tu taller"
                             class="w-32 h-32 object-cover rounded-full shadow-md" />
-                        <h3 class="text-xl text-violeta-oscuro">Elegí tu taller</h3>
-                        <p class="text-sm">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">Elegí tu taller</h3>
+                        <p class="text-sm lg:text-base">
                             Reservá tu fecha en minutos, con opciones para principiantes y
                             grupos
                         </p>
-                        <div class="flex justify-center flex-wrap gap-2 text-xs">
+                        <div class="flex justify-center flex-wrap gap-2 text-xs lg:text-sm">
                             <span class="bg-lila rounded-xl shadow-xs py-2 px-4">2hs de duración</span>
                             <span class="bg-lila rounded-xl shadow-xs py-2 px-4">Principiantes bienvenidos</span>
                         </div>
                     </div>
                 </div>
-                <div class="max-w-2xs flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md p-6">
-                    <div class="flex flex-col items-center gap-4">
+                <div class="max-w-2xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md p-6">
+                    <div class="lg:h-full flex flex-col lg:justify-between items-center gap-4">
                         <img src="./images/experiencia/Crea-con-tus-manos.png" alt="Crea con tus manos"
                             class="w-32 h-32 object-cover rounded-full shadow-md" />
-                        <h3 class="text-xl text-violeta-oscuro">Creá con tus manos</h3>
-                        <p class="text-sm">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">Creá con tus manos</h3>
+                        <p class="text-sm lg:text-base">
                             Modelá tu pieza guiado por nosotros, todo el material está
                             incluido
                         </p>
-                        <div class="flex justify-center flex-wrap gap-2 text-xs">
+                        <div class="flex justify-center flex-wrap gap-2 text-xs lg:text-sm">
                             <span class="bg-lila rounded-xl shadow-xs py-2 px-4">Materiales incluidos</span>
                             <span class="bg-lila rounded-xl shadow-xs py-2 px-4">2 piezas por persona</span>
                         </div>
                     </div>
                 </div>
-                <div class="max-w-2xs flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md p-6">
-                    <div class="flex flex-col items-center gap-4">
+                <div class="max-w-2xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md p-6">
+                    <div class="lg:h-full flex flex-col lg:justify-between items-center gap-4">
                         <img src="./images/experiencia/Brinda-llevate-tu-pieza.png" alt="Brindá y llevate tu pieza"
                             class="w-32 h-32 object-cover rounded-full shadow-md" />
-                        <h3 class="text-xl text-violeta-oscuro">
+                        <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">
                             Brindá y llevate tu pieza
                         </h3>
-                        <p class="text-sm">
+                        <p class="text-sm lg:text-base">
                             Cerramos con un brindis y te llevás tu creación terminada
                         </p>
-                        <div class="flex justify-center flex-wrap gap-2 text-xs">
+                        <div class="flex justify-center flex-wrap gap-2 text-xs lg:text-sm">
                             <span class="bg-lila rounded-xl shadow-xs py-2 px-4">1 copa de vino</span>
                             <span class="bg-lila rounded-xl shadow-xs py-2 px-4">Ambiente relajado</span>
                         </div>
@@ -119,27 +124,27 @@
             </div>
         </section>
         <!-- Próximos eventos -->
-        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10">
-            <div class="flex flex-col gap-2 md:gap-3">
-                <h2 class="text-2xl sm:text-3xl text-violeta-oscuro">
+        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10 lg:py-12 lg:px-16">
+            <div class="flex flex-col lg:items-center gap-2 md:gap-3">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
                     Próximas fechas para sumarte
                 </h2>
-                <p class="text-sm sm:text-base text-violeta-oscuro">
+                <p class="md:max-w-sm lg:max-w-xl text-sm sm:text-base md:text-xl text-violeta-oscuro">
                     Elegí el día que más te guste. Los cupos son limitados, reservá con
                     tiempo.
                 </p>
             </div>
-            <div class="flex justify-center flex-wrap gap-6 md:gap-10">
+            <div class="flex lg:grid lg:grid-cols-3 justify-center flex-wrap gap-6 md:gap-10">
                 <div
-                    class="max-w-2xs flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                    class="max-w-2xs lg:max-w-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
                     <div class="flex flex-col items-center gap-3">
                         <div class="w-20 h-20 flex flex-col justify-center items-center bg-vino text-lila rounded-2xl">
                             <p class="font-bebas text-2xl">24</p>
                             <p class="font-bebas text-2xl">AGO</p>
                         </div>
-                        <h3 class="text-xl">Modelado libre</h3>
+                        <h3 class="text-xl md:text-2xl lg:text-3xl">Modelado libre</h3>
                     </div>
-                    <p class="text-sm">
+                    <p class="text-sm lg:text-base">
                         Un taller relajado para experimentar con arcilla sin reglas. Ideal
                         si querés probar por primera vez
                     </p>
@@ -149,7 +154,7 @@
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9 0l3 2m-3-7v5" />
                             </svg>
-                            <p class="text-xs">2hs de duración</p>
+                            <p class="text-xs lg:text-sm">2hs de duración</p>
                         </div>
                         <div class="flex items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -160,31 +165,21 @@
                                         d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0" />
                                 </g>
                             </svg>
-                            <p class="text-xs">Palermo</p>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <path d="M8 21h8m-4-6v6m5-18l1 7c0 3.012-2.686 5-6 5s-6-1.988-6-5l1-7z" />
-                                    <path d="M6 10a5 5 0 0 1 6 0a5 5 0 0 0 6 0" />
-                                </g>
-                            </svg>
-                            <p class="text-xs">Incluye copa</p>
+                            <p class="text-xs lg:text-sm">Palermo</p>
                         </div>
                     </div>
                     <button class="boton-primario abrir-modal">Reservar lugar</button>
                 </div>
                 <div
-                    class="max-w-2xs flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                    class="max-w-2xs lg:max-w-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
                     <div class="flex flex-col items-center gap-3">
                         <div class="w-20 h-20 flex flex-col justify-center items-center bg-vino text-lila rounded-2xl">
                             <p class="font-bebas text-2xl">31</p>
                             <p class="font-bebas text-2xl">AGO</p>
                         </div>
-                        <h3 class="text-xl">Torno principiantes</h3>
+                        <h3 class="text-xl md:text-2xl lg:text-3xl">Torno principiantes</h3>
                     </div>
-                    <p class="text-sm">
+                    <p class="text-sm lg:text-base">
                         Un primer acercamiento al torno: girar, modelar y descubrir lo
                         mágico de dar forma con tus manos
                     </p>
@@ -194,7 +189,7 @@
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9 0l3 2m-3-7v5" />
                             </svg>
-                            <p class="text-xs">2hs de duración</p>
+                            <p class="text-xs lg:text-sm">2hs de duración</p>
                         </div>
                         <div class="flex items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -205,31 +200,21 @@
                                         d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0" />
                                 </g>
                             </svg>
-                            <p class="text-xs">Caballito</p>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <path d="M8 21h8m-4-6v6m5-18l1 7c0 3.012-2.686 5-6 5s-6-1.988-6-5l1-7z" />
-                                    <path d="M6 10a5 5 0 0 1 6 0a5 5 0 0 0 6 0" />
-                                </g>
-                            </svg>
-                            <p class="text-xs">Incluye copa</p>
+                            <p class="text-xs lg:text-sm">Caballito</p>
                         </div>
                     </div>
                     <button class="boton-primario abrir-modal">Reservar lugar</button>
                 </div>
                 <div
-                    class="max-w-2xs flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                    class="max-w-2xs lg:max-w-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
                     <div class="flex flex-col items-center gap-3">
                         <div class="w-20 h-20 flex flex-col justify-center items-center bg-vino text-lila rounded-2xl">
                             <p class="font-bebas text-2xl">07</p>
                             <p class="font-bebas text-2xl">SEP</p>
                         </div>
-                        <h3 class="text-xl">Taller grupal</h3>
+                        <h3 class="text-xl md:text-2xl lg:text-3xl">Taller grupal</h3>
                     </div>
-                    <p class="text-sm">
+                    <p class="text-sm lg:text-base">
                         Un plan diferente para compartir con amigos, pareja o tu equipo.
                         Creatividad, brindis y mucha diversión
                     </p>
@@ -239,7 +224,7 @@
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0m9 0l3 2m-3-7v5" />
                             </svg>
-                            <p class="text-xs">2hs de duración</p>
+                            <p class="text-xs lg:text-sm">2hs de duración</p>
                         </div>
                         <div class="flex items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -250,35 +235,25 @@
                                         d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0" />
                                 </g>
                             </svg>
-                            <p class="text-xs">Belgrano</p>
-                        </div>
-                        <div class="flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <path d="M8 21h8m-4-6v6m5-18l1 7c0 3.012-2.686 5-6 5s-6-1.988-6-5l1-7z" />
-                                    <path d="M6 10a5 5 0 0 1 6 0a5 5 0 0 0 6 0" />
-                                </g>
-                            </svg>
-                            <p class="text-xs">Incluye copa</p>
+                            <p class="text-xs lg:text-sm">Belgrano</p>
                         </div>
                     </div>
                     <button class="boton-primario abrir-modal">Reservar lugar</button>
                 </div>
             </div>
-            <p class="text-xs md:text-sm text-violeta-oscuro">
+            <p class="text-xs md:text-sm lg:text-base text-violeta-oscuro">
                 ¿No encontrás tu fecha?
                 <a href="#" class="underline text-violeta-medio abrir-modal">Consultá por talleres privados o próximos
                     lanzamientos.</a>
             </p>
         </section>
         <!-- Galería -->
-        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10">
+        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10 lg:py-12 lg:px-16">
             <div class="flex flex-col items-center gap-3 md:gap-4">
-                <h2 class="text-2xl sm:text-3xl text-violeta-oscuro">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  text-violeta-oscuro">
                     Momentos que ya son parte de Cerámica y Vino
                 </h2>
-                <p class="text-sm sm:text-base">
+                <p class="text-sm sm:text-base md:text-xl">
                     Porque cada taller es distinto, pero todos terminan en risas,
                     brindis y manos llenas de barro.
                 </p>
@@ -354,8 +329,8 @@
             </div>
         </section>
         <!-- Testimonios -->
-        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10">
-            <h2 class="text-2xl sm:text-3xl text-violeta-oscuro">
+        <section class="w-full flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10 lg:py-12 lg:px-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  text-violeta-oscuro">
                 Lo que dicen quienes ya vivieron la experiencia
             </h2>
             <div class="flex flex-wrap justify-center gap-3 bg-blanco rounded-2xl shadow-md p-4">
@@ -384,14 +359,14 @@
                                 d="m8.243 7.34l-6.38.925l-.113.023a1 1 0 0 0-.44 1.684l4.622 4.499l-1.09 6.355l-.013.11a1 1 0 0 0 1.464.944l5.706-3l5.693 3l.1.046a1 1 0 0 0 1.352-1.1l-1.091-6.355l4.624-4.5l.078-.085a1 1 0 0 0-.633-1.62l-6.38-.926l-2.852-5.78a1 1 0 0 0-1.794 0z" />
                         </svg>
                     </div>
-                    <p class="text-xs md:text-sm">+1000 reviews</p>
+                    <p class="text-xs md:text-sm">+1000 reseñas</p>
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                 <div class="flex flex-col items-center gap-3 bg-blanco rounded-2xl shadow-md p-3">
                     <img src="./images/reviews/1.png" alt="" class="w-12 h-12 object-cover rounded-full" />
-                    <p>Sofía M</p>
-                    <p class="text-xs">
+                    <p class="lg:text-xl">Sofía M</p>
+                    <p class="text-xs md:text-sm lg:text-base">
                         <i>
                             "La mejor noche que tuve en meses, relajante y divertida a la vez."
                         </i>
@@ -399,8 +374,8 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 bg-blanco rounded-2xl shadow-md p-3">
                     <img src="./images/reviews/2.png" alt="" class="w-12 h-12 object-cover rounded-full" />
-                    <p>Martín B</p>
-                    <p class="text-xs">
+                    <p class="lg:text-xl">Martín B</p>
+                    <p class="text-xs md:text-sm lg:text-base">
                         <i>
                             "Nunca había hecho cerámica, me fui feliz con mi taza hecha a mano."
                         </i>
@@ -408,8 +383,8 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 bg-blanco rounded-2xl shadow-md p-3">
                     <img src="./images/reviews/3.png" alt="" class="w-12 h-12 object-cover rounded-full" />
-                    <p>Camila P</p>
-                    <p class="text-xs">
+                    <p class="lg:text-xl">Camila P</p>
+                    <p class="text-xs md:text-sm lg:text-base">
                         <i>
                             "El plan ideal con amigas: vino, risas y barro."
                         </i>
@@ -417,8 +392,8 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 bg-blanco rounded-2xl shadow-md p-3">
                     <img src="./images/reviews/4.png" alt="" class="w-12 h-12 object-cover rounded-full" />
-                    <p>Nicolás G</p>
-                    <p class="text-xs">
+                    <p class="lg:text-xl">Nicolás G</p>
+                    <p class="text-xs md:text-sm lg:text-base">
                         <i>
                             "Un taller distinto, creativo y con muy buena energía."
                         </i>
@@ -426,8 +401,8 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 bg-blanco rounded-2xl shadow-md p-3">
                     <img src="./images/reviews/5.png" alt="" class="w-12 h-12 object-cover rounded-full" />
-                    <p>Laura S</p>
-                    <p class="text-xs">
+                    <p class="lg:text-xl">Laura S</p>
+                    <p class="text-xs md:text-sm lg:text-base">
                         <i>
                             "Súper recomendable para desconectar y hacer algo con las manos."
                         </i>
@@ -435,8 +410,8 @@
                 </div>
                 <div class="flex flex-col items-center gap-3 bg-blanco rounded-2xl shadow-md p-3">
                     <img src="./images/reviews/6.png" alt="" class="w-12 h-12 object-cover rounded-full" />
-                    <p>Javier D</p>
-                    <p class="text-xs">
+                    <p class="lg:text-xl">Javier D</p>
+                    <p class="text-xs md:text-sm lg:text-base">
                         <i>
                             "Un planazo, salí con una pieza y nuevos amigos."
                         </i>
@@ -497,16 +472,16 @@
     </main>
     <!-- Footer -->
     <footer>
-        <div class="w-full flex flex-col items-center text-center gap-6 bg-vino text-blanco md:gap-10 p-6 md:p-10">
+        <div class="w-full flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 bg-vino text-blanco md:gap-10 p-6 md:p-10 lg:py-12 lg:px-16">
             <a href="/index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
             <nav>
-                <ul class="flex flex-col gap-6 md:gap-8">
+                <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
                     <div class="flex flex-col gap-3">
                         <li>
-                            <a class="text-xs sm:text-sm" href="/nosotros.html">Nosotros</a>
+                            <a class="text-xs sm:text-sm lg:text-base" href="/nosotros.html">Nosotros</a>
                         </li>
                     </div>
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-3 lg:gap-4">
                         <li class="flex justify-center items-center gap-1 sm:gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -516,7 +491,7 @@
                                 </g>
                             </svg>
                             <a href="https://www.instagram.com/ceramicayvino/" target="_blank"
-                                class="text-xs sm:text-sm">@ceramicayvino</a>
+                                class="text-xs sm:text-sm lg:text-base">@ceramicayvino</a>
                         </li>
                         <li class="flex justify-center items-center gap-1 sm:gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -527,7 +502,7 @@
                                 </g>
                             </svg>
                             <a href="mailto:holaceramicayvino@gmail.com" target="_blank"
-                                class="text-xs sm:text-sm">holaceramicayvino@gmail.com</a>
+                                class="text-xs sm:text-sm lg:text-base">holaceramicayvino@gmail.com</a>
                         </li>
                     </div>
                 </ul>
@@ -539,7 +514,7 @@
         </div>
     </footer>
 
-    <script src="/main.js"></script>
+    <script src="./main.js"></script>
 </body>
 
 </html>
