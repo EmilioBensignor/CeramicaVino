@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Carousel
 document.addEventListener('DOMContentLoaded', function () {
-    const contenedor = document.getElementById('contenedor-carousel');
+    const contenedor = document.getElementById('contenedor-galeria');
     const botonAnterior = document.getElementById('anterior');
     const botonSiguiente = document.getElementById('siguiente');
 
@@ -85,8 +85,60 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(irSiguiente, 5000);
 });
 
+// Carousel Eventos
+document.addEventListener('DOMContentLoaded', function () {
+    const contenedorEventos = document.getElementById('contenedor-eventos');
+    const botonAnteriorEventos = document.getElementById('anterior-eventos');
+    const botonSiguienteEventos = document.getElementById('siguiente-eventos');
+
+    let indiceActualEventos = 0;
+    const totalEventos = 3;
+
+    function obtenerEventosPorVista() {
+        if (window.innerWidth >= 768) return 2; // md
+        return 1; // móvil
+    }
+
+    function obtenerIndiceMaximoEventos() {
+        const eventosPorVista = obtenerEventosPorVista();
+        return Math.max(0, totalEventos - eventosPorVista);
+    }
+
+    function actualizarCarouselEventos() {
+        const eventosPorVista = obtenerEventosPorVista();
+        const anchoSlide = 100 / eventosPorVista;
+        contenedorEventos.style.transform = `translateX(-${indiceActualEventos * anchoSlide}%)`;
+    }
+
+    function irSiguienteEvento() {
+        const indiceMaximo = obtenerIndiceMaximoEventos();
+        indiceActualEventos = indiceActualEventos >= indiceMaximo ? 0 : indiceActualEventos + 1;
+        actualizarCarouselEventos();
+    }
+
+    function irAnteriorEvento() {
+        const indiceMaximo = obtenerIndiceMaximoEventos();
+        indiceActualEventos = indiceActualEventos <= 0 ? indiceMaximo : indiceActualEventos - 1;
+        actualizarCarouselEventos();
+    }
+
+    function manejarRedimensionEventos() {
+        const indiceMaximo = obtenerIndiceMaximoEventos();
+        if (indiceActualEventos > indiceMaximo) {
+            indiceActualEventos = indiceMaximo;
+        }
+        actualizarCarouselEventos();
+    }
+
+    botonSiguienteEventos.addEventListener('click', irSiguienteEvento);
+    botonAnteriorEventos.addEventListener('click', irAnteriorEvento);
+    window.addEventListener('resize', manejarRedimensionEventos);
+
+    actualizarCarouselEventos();
+});
+
 // Modal Formulario de Contacto
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal-contacto');
     const botonesAbrir = document.querySelectorAll('.abrir-modal');
     const botonCerrar = document.getElementById('cerrar-modal');
@@ -132,16 +184,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const datos = {
             nombre: document.getElementById('nombre').value,
             email: document.getElementById('email').value,
             telefono: document.getElementById('telefono').value,
             comentario: document.getElementById('comentario').value
         };
-        
+
         console.log('Datos del formulario:', datos);
-        
+
         formulario.reset();
         cerrarModal();
     });
