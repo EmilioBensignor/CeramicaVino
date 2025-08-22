@@ -93,8 +93,18 @@ h3,
     background-color: var(--color-negro);
 }
 
+/* Gradientes */
+
 .gradiente-principal {
+    background-color: var(--color-lila);
     background: linear-gradient(180deg, var(--color-lila) 35%, var(--color-violeta-claro) 100%);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: auto;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 /* Botones */
@@ -137,6 +147,21 @@ h3,
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Video */
+
+/* iOS */
+@supports (-webkit-touch-callout: none) {
+    .gradiente-principal {
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+    }
+
+    video {
+        -webkit-playsinline: true;
+    }
+}
+
 
 /* Responsive */
 
