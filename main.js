@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Carousel
+// Galeria
 document.addEventListener('DOMContentLoaded', function () {
     const contenedor = document.getElementById('contenedor-galeria');
     const botonAnterior = document.getElementById('anterior');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(irSiguiente, 5000);
 });
 
-// Carousel Eventos
+// Eventos
 document.addEventListener('DOMContentLoaded', function () {
     const contenedorEventos = document.getElementById('contenedor-eventos');
     const botonAnteriorEventos = document.getElementById('anterior-eventos');
@@ -196,5 +196,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
         formulario.reset();
         cerrarModal();
+    });
+});
+
+// Animaciones Fade-up
+document.addEventListener('DOMContentLoaded', function () {
+    const elementosFade = document.querySelectorAll('.fade-up');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    elementosFade.forEach(element => {
+        observer.observe(element);
     });
 });
