@@ -19,7 +19,7 @@
     <!-- Header -->
     <header
         class="flex flex-col items-center md:flex-row md:justify-between gap-4 md:gap-8 sticky top-0 z-50 bg-vino text-blanco py-4 md:py-6 px-6 md:px-10 lg:px-16">
-        <div class="w-full flex justify-center lg:justify-between items-center">
+        <div class="w-full max-w-[1375px] flex justify-center lg:justify-between items-center mx-auto">
             <button id="menu" class="lg:hidden absolute left-6 md:left-10 z-50 outline-none">
                 <svg class="w-7 sm:w-8 h-7 sm:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -33,7 +33,6 @@
                 </ul>
             </nav>
         </div>
-        <div class="w-full md:w-1/2 hidden h-12 bg-red-500"></div>
     </header>
     <div id="fondo-menu" class="fixed inset-0 z-40 bg-black/60 opacity-0 invisible transition-all duration-300"></div>
     <div id="menu-lateral" class="menu-lateral w-[75%] max-w-3xs h-screen fixed top-0 left-0 bg-vino shadow-lg z-50">
@@ -72,10 +71,10 @@
             </div>
         </section>
         <div
-            class="max-w-screen relative z-[3] *:first-of-type:relative *:first-of-type:z-[2] 3xl:max-w-full gradiente-principal">
+            class="max-w-screen flex flex-col items-center relative z-[3] *:first-of-type:relative *:first-of-type:z-[2] 3xl:max-w-full gradiente-principal">
             <!-- Experiencia paso a paso -->
             <section
-                class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+                class="w-full max-w-[1375px] flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:p-16 2xl:px-0">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
                     Viví una noche creativa: arcilla, música y una copa
                 </h2>
@@ -133,7 +132,7 @@
             </section>
             <!-- Próximos eventos -->
             <section
-                class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+                class="w-full max-w-[1375px] flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:p-16 2xl:px-0">
                 <div class="flex flex-col lg:items-center gap-2 md:gap-3 2xl:gap-4">
                     <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
                         Próximas fechas para sumarte
@@ -410,7 +409,7 @@
             </section>
             <!-- Galería -->
             <section
-                class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+                class="w-full max-w-[1375px] flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:p-16 2xl:px-0">
                 <div class="flex flex-col items-center gap-3 md:gap-4">
                     <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  text-violeta-oscuro">
                         Momentos que ya son parte de Cerámica y Vino
@@ -504,7 +503,7 @@
             </section>
             <!-- Testimonios -->
             <section
-                class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+                class="w-full max-w-[1375px] flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:p-16 2xl:px-0">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  text-violeta-oscuro">
                     Lo que dicen quienes ya vivieron la experiencia
                 </h2>
@@ -538,7 +537,7 @@
                     </div>
                 </div>
                 <div
-                    class="max-w-[94rem] grid 2xl:flex 2xl:flex-wrap 2xl:justify-center grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-4 2xl:gap-8">
+                    class="grid 2xl:flex 2xl:flex-wrap 2xl:justify-center grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-4 2xl:gap-8">
                     <div
                         class="2xl:w-72 flex flex-col 2xl:justify-between items-center gap-3 bg-blanco rounded-2xl shadow-md fade-up p-3">
                         <img src="./images/reviews/1.png" alt="" class="w-12 h-12 object-cover rounded-full" />
@@ -658,48 +657,52 @@
     <!-- Footer -->
     <footer>
         <div
-            class="w-full flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 bg-vino text-blanco md:gap-10 p-6 md:p-10 lg:py-12 lg:px-16">
-            <a href="/index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
-            <nav>
-                <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">
-                    <div class="flex flex-col gap-3">
-                        <li>
-                            <a class="text-xs sm:text-sm lg:text-base" href="/nosotros.html">Nosotros</a>
-                        </li>
-                    </div>
-                    <div class="flex flex-col gap-3 lg:gap-4 2xl:gap-8">
-                        <li class="flex justify-center items-center gap-1 sm:gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" />
-                                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01" />
-                                </g>
-                            </svg>
-                            <a href="https://www.instagram.com/ceramicayvino/" target="_blank"
-                                class="text-xs sm:text-sm lg:text-base">@ceramicayvino</a>
-                        </li>
-                        <li class="flex justify-center items-center gap-1 sm:gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                    <path d="m3 7l9 6l9-6" />
-                                </g>
-                            </svg>
-                            <a href="mailto:holaceramicayvino@gmail.com" target="_blank"
-                                class="text-xs sm:text-sm lg:text-base">holaceramicayvino@gmail.com</a>
-                        </li>
-                    </div>
-                </ul>
-            </nav>
+            class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">
+            <div class="max-w-[1375px] flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 md:gap-10 mx-auto">
+                <a href="/index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
+                <nav>
+                    <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">
+                        <div class="flex flex-col gap-3">
+                            <li>
+                                <a class="text-xs sm:text-sm lg:text-base" href="/nosotros.html">Nosotros</a>
+                            </li>
+                        </div>
+                        <div class="flex flex-col gap-3 lg:gap-4 2xl:gap-8">
+                            <li class="flex justify-center items-center gap-1 sm:gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" />
+                                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01" />
+                                    </g>
+                                </svg>
+                                <a href="https://www.instagram.com/ceramicayvino/" target="_blank"
+                                    class="text-xs sm:text-sm lg:text-base">@ceramicayvino</a>
+                            </li>
+                            <li class="flex justify-center items-center gap-1 sm:gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <path
+                                            d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                        <path d="m3 7l9 6l9-6" />
+                                    </g>
+                                </svg>
+                                <a href="mailto:holaceramicayvino@gmail.com" target="_blank"
+                                    class="text-xs sm:text-sm lg:text-base">holaceramicayvino@gmail.com</a>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="w-full bg-violeta-extra-oscuro py-3 md:py-4 px-6">
-            <p class="text-center text-[0.625rem] md:text-xs text-blanco text-xs">© 2025 Cerámica Vino. Todos los
-                derechos reservados.</p>
+        <div class="w-full flex justify-center bg-violeta-extra-oscuro py-3 md:py-4 px-6">
+            <div class="max-w-[1375px]">
+                <p class="text-center text-[0.625rem] md:text-xs text-blanco text-xs">© 2025 Cerámica Vino. Todos los
+                    derechos reservados.</p>
+            </div>
         </div>
     </footer>
-
     <script src="./main.js"></script>
 </body>
 
