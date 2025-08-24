@@ -36,14 +36,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonAnterior = document.getElementById('anterior');
     const botonSiguiente = document.getElementById('siguiente');
 
+    if (!contenedor || !botonAnterior || !botonSiguiente) return;
+
     let indiceActual = 0;
     const totalImagenes = 12;
 
     function obtenerImagenesPorVista() {
-        if (window.innerWidth >= 1024) return 4; // lg
-        if (window.innerWidth >= 768) return 3;  // md
-        if (window.innerWidth >= 640) return 2;  // sm
-        return 1; // móvil
+        if (window.innerWidth >= 1024) return 4;
+        if (window.innerWidth >= 768) return 3;
+        if (window.innerWidth >= 640) return 2;
+        return 1;
     }
 
     function obtenerIndiceMaximo() {
@@ -91,12 +93,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const botonAnteriorEventos = document.getElementById('anterior-eventos');
     const botonSiguienteEventos = document.getElementById('siguiente-eventos');
 
+    if (!contenedorEventos || !botonAnteriorEventos || !botonSiguienteEventos) return;
+
     let indiceActualEventos = 0;
     const totalEventos = 3;
 
     function obtenerEventosPorVista() {
-        if (window.innerWidth >= 768) return 2; // md
-        return 1; // móvil
+        if (window.innerWidth >= 768) return 2;
+        return 1;
     }
 
     function obtenerIndiceMaximoEventos() {
@@ -199,10 +203,65 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Carousel Equipo
+document.addEventListener('DOMContentLoaded', function () {
+    const contenedorEquipo = document.getElementById('contenedor-equipo');
+    const botonAnteriorEquipo = document.getElementById('anterior-equipo');
+    const botonSiguienteEquipo = document.getElementById('siguiente-equipo');
+
+    if (!contenedorEquipo || !botonAnteriorEquipo || !botonSiguienteEquipo) return;
+
+    let indiceActualEquipo = 0;
+    const totalMiembros = 6;
+
+    function obtenerMiembrosPorVista() {
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+    }
+
+    function obtenerIndiceMaximoEquipo() {
+        const miembrosPorVista = obtenerMiembrosPorVista();
+        return Math.max(0, totalMiembros - miembrosPorVista);
+    }
+
+    function actualizarCarouselEquipo() {
+        const miembrosPorVista = obtenerMiembrosPorVista();
+        const anchoSlide = 100 / miembrosPorVista;
+        contenedorEquipo.style.transform = `translateX(-${indiceActualEquipo * anchoSlide}%)`;
+    }
+
+    function irSiguienteMiembro() {
+        const indiceMaximo = obtenerIndiceMaximoEquipo();
+        indiceActualEquipo = indiceActualEquipo >= indiceMaximo ? 0 : indiceActualEquipo + 1;
+        actualizarCarouselEquipo();
+    }
+
+    function irAnteriorMiembro() {
+        const indiceMaximo = obtenerIndiceMaximoEquipo();
+        indiceActualEquipo = indiceActualEquipo <= 0 ? indiceMaximo : indiceActualEquipo - 1;
+        actualizarCarouselEquipo();
+    }
+
+    function manejarRedimensionEquipo() {
+        const indiceMaximo = obtenerIndiceMaximoEquipo();
+        if (indiceActualEquipo > indiceMaximo) {
+            indiceActualEquipo = indiceMaximo;
+        }
+        actualizarCarouselEquipo();
+    }
+
+    botonSiguienteEquipo.addEventListener('click', irSiguienteMiembro);
+    botonAnteriorEquipo.addEventListener('click', irAnteriorMiembro);
+    window.addEventListener('resize', manejarRedimensionEquipo);
+
+    actualizarCarouselEquipo();
+    setInterval(irSiguienteMiembro, 5000);
+});
+
 // Animaciones Fade-up
 document.addEventListener('DOMContentLoaded', function () {
     const elementosFade = document.querySelectorAll('.fade-up');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

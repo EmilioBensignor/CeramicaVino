@@ -6,67 +6,343 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerámica y Vino - Nosotros</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
     <!-- Header -->
-    <header class="flex flex-col items-center md:flex-row md:justify-between gap-4 md:gap-8 bg-red-200 text-blanco p-4">
-        <div class="w-full md:w-1/2">
-            <div class="w-24 h-24 bg-red-500"></div>
+    <header
+        class="flex flex-col items-center md:flex-row md:justify-between gap-4 md:gap-8 sticky top-0 z-50 bg-vino text-blanco py-4 md:py-6 px-6 md:px-10 lg:px-16">
+        <div class="w-full flex justify-center lg:justify-between items-center">
+            <button id="menu" class="lg:hidden absolute left-6 md:left-10 z-50 outline-none">
+                <svg class="w-7 sm:w-8 h-7 sm:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <a href="/index.html" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
+            <nav class="hidden lg:flex">
+                <ul>
+                    <li><a href="/nosotros.html" class="lg:text-xl">Nosotros</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="w-full md:w-1/2 h-12 bg-red-500"></div>
+        <div class="w-full md:w-1/2 hidden h-12 bg-red-500"></div>
     </header>
-    <main class="flex flex-col gap-6 p-4">
+    <div id="fondo-menu" class="fixed inset-0 z-40 bg-black/60 opacity-0 invisible transition-all duration-300"></div>
+    <div id="menu-lateral" class="menu-lateral w-[75%] max-w-3xs h-screen fixed top-0 left-0 bg-vino shadow-lg z-50">
+        <div class="h-full flex flex-col p-6">
+            <button id="cruz-cerrar"
+                class="absolute top-4 right-6 text-3xl md:text-4xl text-blanco hover:text-primary transition-colors">
+                &times;
+            </button>
+            <nav class="mt-6 md:mt-10">
+                <ul class="flex flex-col gap-4 md:gap-6 text-blanco">
+                    <li>
+                        <a href="/index.html" class="md:text-xl">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/nosotros.html" class="md:text-xl">Nosotros</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <main class="flex flex-col gradiente-principal text-violeta-extra-oscuro">
         <!-- Hero -->
-        <section class="w-full flex flex-col md:flex-row items-center gap-4 md:gap-8 bg-violet-200">
-            <div class="w-full h-64 bg-violet-500"></div>
-            <div class="w-full h-64 bg-violet-500"></div>
+        <section class="w-full flex flex-col md:flex-row items-center gap-6 md:gap-10 2xl:gap-12 p-6">
+            <div
+                class="w-full flex flex-col justify-center items-center text-center text-violeta-oscuro gap-6 md:gap-10 2xl:gap-12">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Un espacio para crear, compartir y brindar</h1>
+                <p class="max-w-sm sm:max-w-lg lg:max-w-3xl sm:text-xl lg:text-2xl">
+                    Somos un equipo que mezcla cerámica, vino y comunidad en cada encuentro. Creemos en el poder de
+                    crear con las manos, brindar y compartir momentos simples pero memorables.
+                </p>
+            </div>
+            <img src="./images/nosotros/Hero-Nosotros.png" alt="Hero Nosotros">
         </section>
         <!-- Historia -->
-        <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 bg-pink-200">
-            <div class="w-full h-64 bg-pink-500"></div>
-            <div class="w-full h-64 bg-pink-500"></div>
-            <div class="w-full h-64 bg-pink-500"></div>
-            <div class="w-full h-64 bg-pink-500"></div>
+        <section
+            class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
+                De una juntada entre amigos a una comunidad creativa
+            </h2>
+            <p class="md:max-w-sm lg:max-w-xl text-sm sm:text-base md:text-xl text-violeta-oscuro">
+                Cerámica y Vino nació en Buenos Aires como una juntada entre amigos, con un torno prestado y un par de
+                copas. Descubrimos que ese momento de juego y conexión tenía algo especial: relajar, charlar, reír y
+                crear algo con tus propias manos. Hoy seguimos con la misma esencia: talleres simples, cercanos y llenos
+                de calidez.
+            </p>
+            <img src="./images/nosotros/Historia.png" alt="Historia" class="rounded-xl shadow-lg fade-up">
         </section>
         <!-- Valores -->
-        <section class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 bg-blue-200">
-            <div class="w-full h-72 bg-blue-500"></div>
-            <div class="w-full h-72 bg-blue-500"></div>
-            <div class="w-full h-72 bg-blue-500"></div>
+        <section
+            class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
+                Lo que nos guía
+            </h2>
+            <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center gap-6 md:gap-8 2xl:gap-10">
+                <div
+                    class="max-w-3xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md fade-up p-6">
+                    <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2">
+                            <path d="M19.5 12.572L12 20l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572" />
+                            <path
+                                d="M12 6L8.707 9.293a1 1 0 0 0 0 1.414l.543.543c.69.69 1.81.69 2.5 0l1-1a3.18 3.18 0 0 1 4.5 0l2.25 2.25m-7 3l2 2M15 13l2 2" />
+                        </g>
+                    </svg>
+                    <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">Cercanía</h3>
+                    <p class="text-sm lg:text-base">Charlamos, acompañamos y celebramos cada pieza.</p>
+                </div>
+                <div
+                    class="max-w-3xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md fade-up p-6">
+                    <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m5.004 10.229l-.003-.186l.001-.113l.008-.071l1-7a1 1 0 0 1 .877-.853L7 2h10a1 1 0 0 1 .968.747l.022.112l1.006 7.05L19 10c0 3.226-2.56 5.564-6 5.945V20h3a1 1 0 0 1 .117 1.993L16 22H8a1 1 0 0 1-.117-1.993L8 20h3v-4.055c-3.358-.371-5.878-2.609-5.996-5.716M16.133 4H7.866l-.607 4.258a6 6 0 0 1 5.125.787l.216.155a4 4 0 0 0 4.32.31z" />
+                    </svg>
+                    <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">Juego</h3>
+                    <p class="text-sm lg:text-base">Aprender jugando: mancharse está permitido.</p>
+                </div>
+                <div
+                    class="max-w-3xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md fade-up p-6">
+                    <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M19.5 12.572L12 20l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572" />
+                    </svg>
+                    <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">Calidez</h3>
+                    <p class="text-sm lg:text-base">Ambiente cuidado: música, copas y luz suave.</p>
+                </div>
+                <div
+                    class="max-w-3xs lg:max-w-full flex flex-col items-center text-center gap-4 bg-blanco rounded-4xl shadow-md fade-up p-6">
+                    <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2">
+                            <path d="M12 21a9 9 0 1 1 0-18a9 9 0 0 1 0 18" />
+                            <path d="M10 10c-.5-1-2.5-1-3 0m10 0c-.5-1-2.5-1-3 0m.5 5a3.5 3.5 0 0 1-5 0" />
+                        </g>
+                    </svg>
+                    <h3 class="text-xl md:text-2xl lg:text-3xl text-violeta-oscuro">Inclusión</h3>
+                    <p class="text-sm lg:text-base">Todos son bienvenidos, sin experiencia previa.</p>
+                </div>
+            </div>
         </section>
-        <!-- Equipo -->
-        <section class="w-full grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 bg-teal-200">
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
-            <div class="w-full h-32 bg-teal-500"></div>
+        <section
+            class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
+                Quiénes estamos detrás
+            </h2>
+            <div class="w-full relative px-4 mx-auto fade-up">
+                <div class="overflow-hidden rounded-2xl">
+                    <div id="contenedor-equipo" class="flex transition-transform duration-500 ease-in-out py-2">
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+                            <div
+                                class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-4 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                                <img src="./images/nosotros/equipo/Luna.png" alt="Luna"
+                                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl lg:text-3xl">Luna</h3>
+                                    <p class="text-sm lg:text-base">Ceramista y facilitadora</p>
+                                </div>
+                                <p class="text-sm lg:text-base"><i>Me emociona cuando alguien firma su primera
+                                        pieza.</i></p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+                            <div
+                                class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-4 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                                <img src="./images/nosotros/equipo/Tomi.png" alt="Tomi"
+                                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl lg:text-3xl">Tomi</h3>
+                                    <p class="text-sm lg:text-base">Técnico y horneadas</p>
+                                </div>
+                                <p class="text-sm lg:text-base"><i>El horno es paciencia y sorpresas.</i></p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+                            <div
+                                class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-4 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                                <img src="./images/nosotros/equipo/Sofi.png" alt="Sofi"
+                                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl lg:text-3xl">Sofi</h3>
+                                    <p class="text-sm lg:text-base">Comunidad y experiencias</p>
+                                </div>
+                                <p class="text-sm lg:text-base"><i>Crear en grupo multiplica la alegría.</i></p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+                            <div
+                                class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-4 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                                <img src="./images/nosotros/equipo/Martin.png" alt="Martin"
+                                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl lg:text-3xl">Martin</h3>
+                                    <p class="text-sm lg:text-base">Diseño y materiales</p>
+                                </div>
+                                <p class="text-sm lg:text-base"><i>Cada arcilla tiene un carácter distinto, me encanta
+                                        descubrirlo con otros.</i></p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+                            <div
+                                class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-4 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                                <img src="./images/nosotros/equipo/Clara.png" alt="Clara"
+                                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl lg:text-3xl">Clara</h3>
+                                    <p class="text-sm lg:text-base">Fotografía y comunicación</p>
+                                </div>
+                                <p class="text-sm lg:text-base"><i>Mi tarea es capturar la magia: barro, vino y
+                                        risas.</i></p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-2">
+                            <div
+                                class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-4 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
+                                <img src="./images/nosotros/equipo/Julian.png" alt="Julian"
+                                    class="w-28 h-28 rounded-full object-cover shadow-lg">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl lg:text-3xl">Julián</h3>
+                                    <p class="text-sm lg:text-base">Logística y apoyo en talleres</p>
+                                </div>
+                                <p class="text-sm lg:text-base"><i>Si todo fluye es porque alguien piensa en los
+                                        detalles.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="anterior-equipo"
+                    class="w-8 h-8 flex justify-center items-center absolute left-0 top-1/2 z-10 transform -translate-y-1/2 bg-white/70 text-negro rounded-full cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="m15 6l-6 6l6 6" />
+                    </svg>
+                </button>
+                <button id="siguiente-equipo"
+                    class="w-8 h-8 flex justify-center items-center absolute right-0 top-1/2 z-10 transform -translate-y-1/2 bg-white/70 text-negro rounded-full cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="m9 6l6 6l-6 6" />
+                    </svg>
+                </button>
+            </div>
         </section>
         <!-- Contacto -->
-        <section class="w-full flex flex-col md:flex-row items-center gap-4 md:gap-8 bg-lime-200">
-            <div class="w-full md:w-1/2 h-64 bg-lime-500"></div>
-            <div class="w-full md:w-1/2 h-64 bg-lime-500"></div>
+        <section
+            class="w-full flex flex-col items-center text-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:py-12 lg:px-16">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">
+                ¿Querés ser parte de nuestra historia? Sumate a un taller y viví la experiencia.
+            </h2>
+            <button class="boton-primario abrir-modal">Reservar lugar</button>
         </section>
     </main>
-    <!-- Footer -->
-    <footer class="w-full flex flex-col bg-red-300">
-        <div class="w-full flex flex-col md:flex-row items-center md:items-start md:justify-between gap-4 md:gap-8 p-4">
-            <!-- Logo -->
-            <div class="w-full md:w-32 flex flex-col items-center">
-                <div class="w-24 h-24 bg-red-500"></div>
+    <!-- Formulario -->
+    <div id="modal-contacto" class="fixed inset-0 z-50 bg-black/60 opacity-0 invisible transition-all duration-150">
+        <div class="h-dvh flex items-center justify-center p-6">
+            <div
+                class="w-full max-w-md flex flex-col gap-6 bg-blanco rounded-2xl shadow-xl p-6 transform scale-95 transition-transform duration-200">
+                <div class="flex justify-between items-center">
+                    <p class="text-xl lg:text-2xl text-vino font-semibold">Contactanos</p>
+                    <button id="cerrar-modal" class="text-negro">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <form id="formulario-contacto" class="flex flex-col gap-4">
+                    <div>
+                        <label for="nombre" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Nombre <span
+                                class="text-vino">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Email <span
+                                class="text-vino">*</span></label>
+                        <input type="email" autocomplete="email" id="email" name="email" required
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    </div>
+
+                    <div>
+                        <label for="telefono"
+                            class="block text-sm lg:text-base text-violeta-oscuro mb-1">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono"
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    </div>
+
+                    <div>
+                        <label for="comentario"
+                            class="block text-sm lg:text-base text-violeta-oscuro mb-1">Comentario</label>
+                        <textarea id="comentario" name="comentario" rows="5"
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="boton-primario mt-2">
+                        Enviar mensaje
+                    </button>
+                </form>
             </div>
-            <!-- Paginas -->
-            <div class="w-full h-64 bg-red-500"></div>
-            <!-- Redes -->
-            <div class="w-full h-64 bg-red-500"></div>
         </div>
-        <div class="w-full h-12 bg-red-900"></div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div
+            class="w-full flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 bg-vino text-blanco md:gap-10 p-6 md:p-10 lg:py-12 lg:px-16">
+            <a href="/index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
+            <nav>
+                <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">
+                    <div class="flex flex-col gap-3">
+                        <li>
+                            <a class="text-xs sm:text-sm lg:text-base" href="/nosotros.html">Nosotros</a>
+                        </li>
+                    </div>
+                    <div class="flex flex-col gap-3 lg:gap-4 2xl:gap-8">
+                        <li class="flex justify-center items-center gap-1 sm:gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2">
+                                    <path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" />
+                                    <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01" />
+                                </g>
+                            </svg>
+                            <a href="https://www.instagram.com/ceramicayvino/" target="_blank"
+                                class="text-xs sm:text-sm lg:text-base">@ceramicayvino</a>
+                        </li>
+                        <li class="flex justify-center items-center gap-1 sm:gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2">
+                                    <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <path d="m3 7l9 6l9-6" />
+                                </g>
+                            </svg>
+                            <a href="mailto:holaceramicayvino@gmail.com" target="_blank"
+                                class="text-xs sm:text-sm lg:text-base">holaceramicayvino@gmail.com</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div class="w-full bg-violeta-extra-oscuro py-3 md:py-4 px-6">
+            <p class="text-center text-[0.625rem] md:text-xs text-blanco text-xs">© 2025 Cerámica Vino. Todos los
+                derechos reservados.</p>
+        </div>
     </footer>
+    <script src="./main.js"></script>
 </body>
 
 </html>

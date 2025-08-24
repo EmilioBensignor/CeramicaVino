@@ -21,7 +21,7 @@
         class="flex flex-col items-center md:flex-row md:justify-between gap-4 md:gap-8 sticky top-0 z-50 bg-vino text-blanco py-4 md:py-6 px-6 md:px-10 lg:px-16">
         <div class="w-full flex justify-center lg:justify-between items-center">
             <button id="menu" class="lg:hidden absolute left-6 md:left-10 z-50 outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                <svg class="w-7 sm:w-8 h-7 sm:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                         stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -58,15 +58,17 @@
         <!-- Hero -->
         <section
             class="w-full flex flex-col md:flex-row items-center sticky top-0 z-[1] -mt-[68px] md:-mt-[70px] lg:-mt-[88px]">
-            <video src="./videos/Ceramica-y-Vino.mp4" class="w-full h-screen object-cover" autoplay muted loop playsinline></video>
+            <video src="./videos/Ceramica-y-Vino.mp4" class="w-full h-screen object-cover" autoplay muted loop
+                playsinline></video>
             <div
-                class="hero w-full h-screen flex flex-col justify-center items-center text-center gap-6 md:gap-10 2xl:gap-12 absolute bg-negro/50 text-blanco p-6">
+                class="hero w-full h-dvh flex flex-col justify-center items-center text-center gap-6 md:gap-10 2xl:gap-12 absolute bg-negro/50 text-blanco p-6">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">VOS, YO, ARTE Y VINITO</h1>
                 <p class="max-w-sm sm:max-w-lg lg:max-w-3xl sm:text-xl lg:text-2xl">
                     Un espacio donde el arte de la cerámica se mezcla con la magia del
                     vino. Encuentros únicos para crear, compartir y disfrutar.
                 </p>
-                <button class="boton-primario abrir-modal md:text-xl md:py-4 md:px-64">Quiero mi lugar</button>
+                <button class="boton-primario sm:text-xl abrir-modal md:text-xl sm:!py-4 sm:!px-16">Quiero mi
+                    lugar</button>
             </div>
         </section>
         <div
@@ -146,7 +148,7 @@
                         <div id="contenedor-eventos" class="flex transition-transform duration-500 ease-in-out py-2">
                             <div class="w-full md:w-1/2 flex-shrink-0 px-2">
                                 <div
-                                    class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro  fade-upshadow-md p-6">
+                                    class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
                                     <div class="flex flex-col items-center gap-3">
                                         <div
                                             class="w-20 h-20 flex flex-col justify-center items-center bg-vino text-lila rounded-2xl">
@@ -187,7 +189,7 @@
                             </div>
                             <div class="w-full md:w-1/2 flex-shrink-0 px-2">
                                 <div
-                                    class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro  fade-upshadow-md p-6">
+                                    class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
                                     <div class="flex flex-col items-center gap-3">
                                         <div
                                             class="w-20 h-20 flex flex-col justify-center items-center bg-vino text-lila rounded-2xl">
@@ -228,7 +230,7 @@
                             </div>
                             <div class="w-full md:w-1/2 flex-shrink-0 px-2">
                                 <div
-                                    class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro  fade-upshadow-md p-6">
+                                    class="max-w-2xs mx-auto h-full flex flex-col justify-between items-center gap-6 bg-blanco rounded-4xl text-violeta-oscuro shadow-md p-6">
                                     <div class="flex flex-col items-center gap-3">
                                         <div
                                             class="w-20 h-20 flex flex-col justify-center items-center bg-vino text-lila rounded-2xl">
@@ -510,24 +512,24 @@
                     <img src="./images/reviews/Logo-Google.png" alt="Google" class="h-12 2xl:h-16 object-contain" />
                     <div class="flex items-center gap-2 md:gap-3">
                         <p class="font-bebas text-violeta-mi text-2xl md:text-3xl 2xl:text-4xl">4.8</p>
-                        <div class="stars flex items-center gap-1 text-yellow-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                        <div class="flex items-center gap-1 text-yellow-500">
+                            <svg class="w-4 sm:w-5 h-4 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="m8.243 7.34l-6.38.925l-.113.023a1 1 0 0 0-.44 1.684l4.622 4.499l-1.09 6.355l-.013.11a1 1 0 0 0 1.464.944l5.706-3l5.693 3l.1.046a1 1 0 0 0 1.352-1.1l-1.091-6.355l4.624-4.5l.078-.085a1 1 0 0 0-.633-1.62l-6.38-.926l-2.852-5.78a1 1 0 0 0-1.794 0z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                            <svg class="w-4 sm:w-5 h-4 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="m8.243 7.34l-6.38.925l-.113.023a1 1 0 0 0-.44 1.684l4.622 4.499l-1.09 6.355l-.013.11a1 1 0 0 0 1.464.944l5.706-3l5.693 3l.1.046a1 1 0 0 0 1.352-1.1l-1.091-6.355l4.624-4.5l.078-.085a1 1 0 0 0-.633-1.62l-6.38-.926l-2.852-5.78a1 1 0 0 0-1.794 0z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                            <svg class="w-4 sm:w-5 h-4 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="m8.243 7.34l-6.38.925l-.113.023a1 1 0 0 0-.44 1.684l4.622 4.499l-1.09 6.355l-.013.11a1 1 0 0 0 1.464.944l5.706-3l5.693 3l.1.046a1 1 0 0 0 1.352-1.1l-1.091-6.355l4.624-4.5l.078-.085a1 1 0 0 0-.633-1.62l-6.38-.926l-2.852-5.78a1 1 0 0 0-1.794 0z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                            <svg class="w-4 sm:w-5 h-4 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="m8.243 7.34l-6.38.925l-.113.023a1 1 0 0 0-.44 1.684l4.622 4.499l-1.09 6.355l-.013.11a1 1 0 0 0 1.464.944l5.706-3l5.693 3l.1.046a1 1 0 0 0 1.352-1.1l-1.091-6.355l4.624-4.5l.078-.085a1 1 0 0 0-.633-1.62l-6.38-.926l-2.852-5.78a1 1 0 0 0-1.794 0z" />
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                            <svg class="w-4 sm:w-5 h-4 sm:h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="m8.243 7.34l-6.38.925l-.113.023a1 1 0 0 0-.44 1.684l4.622 4.499l-1.09 6.355l-.013.11a1 1 0 0 0 1.464.944l5.706-3l5.693 3l.1.046a1 1 0 0 0 1.352-1.1l-1.091-6.355l4.624-4.5l.078-.085a1 1 0 0 0-.633-1.62l-6.38-.926l-2.852-5.78a1 1 0 0 0-1.794 0z" />
                             </svg>
@@ -536,7 +538,7 @@
                     </div>
                 </div>
                 <div
-                    class="grid 2xl:flex 2xl:flex-wrap 2xl:justify-center grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-4 2xl:gap-6">
+                    class="max-w-[94rem] grid 2xl:flex 2xl:flex-wrap 2xl:justify-center grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-4 2xl:gap-8">
                     <div
                         class="2xl:w-72 flex flex-col 2xl:justify-between items-center gap-3 bg-blanco rounded-2xl shadow-md fade-up p-3">
                         <img src="./images/reviews/1.png" alt="" class="w-12 h-12 object-cover rounded-full" />
@@ -600,59 +602,59 @@
                 </div>
             </section>
         </div>
-        <!-- Formulario -->
-        <div id="modal-contacto" class="fixed inset-0 z-50 bg-black/60 opacity-0 invisible transition-all duration-150">
-            <div class="h-full flex items-center justify-center p-6">
-                <div
-                    class="w-full max-w-md flex flex-col gap-6 bg-blanco rounded-2xl shadow-xl p-6 transform scale-95 transition-transform duration-200">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl lg:text-2xl text-vino font-semibold">Contactanos</p>
-                        <button id="cerrar-modal" class="text-negro">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
+    </main>
+    <!-- Formulario -->
+    <div id="modal-contacto" class="fixed inset-0 z-50 bg-black/60 opacity-0 invisible transition-all duration-150">
+        <div class="h-dvh flex items-center justify-center p-6">
+            <div
+                class="w-full max-w-md flex flex-col gap-6 bg-blanco rounded-2xl shadow-xl p-6 transform scale-95 transition-transform duration-200">
+                <div class="flex justify-between items-center">
+                    <p class="text-xl lg:text-2xl text-vino font-semibold">Contactanos</p>
+                    <button id="cerrar-modal" class="text-negro">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <form id="formulario-contacto" class="flex flex-col gap-4">
+                    <div>
+                        <label for="nombre" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Nombre <span
+                                class="text-vino">*</span></label>
+                        <input type="text" id="nombre" name="nombre" required
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
                     </div>
 
-                    <form id="formulario-contacto" class="flex flex-col gap-4">
-                        <div>
-                            <label for="nombre" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Nombre <span
-                                    class="text-vino">*</span></label>
-                            <input type="text" id="nombre" name="nombre" required
-                                class="w-full border border-gray-400 rounded-lg outline-none p-3">
-                        </div>
+                    <div>
+                        <label for="email" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Email <span
+                                class="text-vino">*</span></label>
+                        <input type="email" autocomplete="email" id="email" name="email" required
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    </div>
 
-                        <div>
-                            <label for="email" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Email <span
-                                    class="text-vino">*</span></label>
-                            <input type="email" autocomplete="email" id="email" name="email" required
-                                class="w-full border border-gray-400 rounded-lg outline-none p-3">
-                        </div>
+                    <div>
+                        <label for="telefono"
+                            class="block text-sm lg:text-base text-violeta-oscuro mb-1">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono"
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    </div>
 
-                        <div>
-                            <label for="telefono"
-                                class="block text-sm lg:text-base text-violeta-oscuro mb-1">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono"
-                                class="w-full border border-gray-400 rounded-lg outline-none p-3">
-                        </div>
+                    <div>
+                        <label for="comentario"
+                            class="block text-sm lg:text-base text-violeta-oscuro mb-1">Comentario</label>
+                        <textarea id="comentario" name="comentario" rows="5"
+                            class="w-full border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
+                    </div>
 
-                        <div>
-                            <label for="comentario"
-                                class="block text-sm lg:text-base text-violeta-oscuro mb-1">Comentario</label>
-                            <textarea id="comentario" name="comentario" rows="5"
-                                class="w-full border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" class="boton-primario mt-2">
-                            Enviar mensaje
-                        </button>
-                    </form>
-                </div>
+                    <button type="submit" class="boton-primario mt-2">
+                        Enviar mensaje
+                    </button>
+                </form>
             </div>
         </div>
-    </main>
+    </div>
     <!-- Footer -->
     <footer>
         <div
