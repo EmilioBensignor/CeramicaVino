@@ -28,8 +28,9 @@
             </button>
             <a href="./index.html" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
             <nav class="hidden lg:flex">
-                <ul>
+                <ul class="flex items-center gap-5 2xl:gap-7">
                     <li><a href="./nosotros.html" class="lg:text-xl">Nosotros</a></li>
+                    <li class="flex"><a href="./login.html" class="login">Iniciar Sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,6 +49,9 @@
                     </li>
                     <li>
                         <a href="./nosotros.html" class="md:text-xl">Nosotros</a>
+                    </li>
+                    <li class="flex">
+                        <a href="./login.html" class="login">Iniciar Sesión</a>
                     </li>
                 </ul>
             </nav>
@@ -162,7 +166,7 @@
                                     </p>
                                     <div class="flex flex-wrap justify-center gap-3">
                                         <div class="flex items-center gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
                                                 viewBox="0 0 24 24">
                                                 <path fill="none" stroke="currentColor" stroke-linecap="round"
                                                     stroke-linejoin="round" stroke-width="2"
@@ -604,9 +608,9 @@
     </main>
     <!-- Formulario -->
     <div id="modal-contacto" class="fixed inset-0 z-50 bg-black/60 opacity-0 invisible transition-all duration-150">
-        <div class="h-dvh flex items-center justify-center p-6">
+        <div class="h-dvh flex items-center justify-center p-6 overflow-y-auto">
             <div
-                class="w-full max-w-md flex flex-col gap-6 bg-blanco rounded-2xl shadow-xl p-6 transform scale-95 transition-transform duration-200">
+                class="w-full max-w-md lg:max-w-3xl flex flex-col gap-6 bg-blanco rounded-2xl shadow-xl p-6 transform scale-95 transition-transform duration-200 my-auto">
                 <div class="flex justify-between items-center">
                     <p class="text-xl lg:text-2xl text-vino font-semibold">Contactanos</p>
                     <button id="cerrar-modal" class="text-negro">
@@ -619,35 +623,78 @@
                 </div>
 
                 <form id="formulario-contacto" class="flex flex-col gap-4">
-                    <div>
-                        <label for="nombre" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Nombre <span
-                                class="text-vino">*</span></label>
-                        <input type="text" id="nombre" name="nombre" required
-                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
+                        <div class="lg:w-1/2">
+                            <label for="nombre"
+                                class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Nombre <span
+                                    class="text-vino">*</span></label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required
+                                class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-nombre">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                    class="flex-shrink-0 text-red-500">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                </svg>
+                                <p class="text-red-500 text-xs"></p>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/2">
+                            <label for="email"
+                                class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Email <span
+                                    class="text-vino">*</span></label>
+                            <input type="email" autocomplete="email" id="email" name="email"
+                                placeholder="Ingrese su email" required
+                                class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                    class="flex-shrink-0 text-red-500">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                </svg>
+                                <p class="text-red-500 text-xs"></p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="email" class="block text-sm lg:text-base text-violeta-oscuro mb-1">Email <span
-                                class="text-vino">*</span></label>
-                        <input type="email" autocomplete="email" id="email" name="email" required
-                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
+                    <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
+                        <div class="lg:w-1/2">
+                            <label for="telefono"
+                                class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required
+                                class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-telefono">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                    class="flex-shrink-0 text-red-500">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                </svg>
+                                <p class="text-red-500 text-xs"></p>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/2">
+                            <label for="comentario"
+                                class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Comentario</label>
+                            <textarea id="comentario" name="comentario" rows="5" placeholder="Ingrese su comentario"
+                                class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-comentario">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                    class="flex-shrink-0 text-red-500">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                </svg>
+                                <p class="text-red-500 text-xs"></p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="telefono"
-                            class="block text-sm lg:text-base text-violeta-oscuro mb-1">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono"
-                            class="w-full border border-gray-400 rounded-lg outline-none p-3">
-                    </div>
-
-                    <div>
-                        <label for="comentario"
-                            class="block text-sm lg:text-base text-violeta-oscuro mb-1">Comentario</label>
-                        <textarea id="comentario" name="comentario" rows="5"
-                            class="w-full border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
-                    </div>
-
-                    <button type="submit" class="boton-primario mt-2">
+                    <button type="submit" class="boton-primario self-end mt-2">
                         Enviar mensaje
                     </button>
                 </form>
@@ -656,9 +703,9 @@
     </div>
     <!-- Footer -->
     <footer>
-        <div
-            class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">
-            <div class="max-w-[1375px] flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 md:gap-10 mx-auto">
+        <div class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">
+            <div
+                class="max-w-[1375px] flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 md:gap-10 mx-auto">
                 <a href="./index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
                 <nav>
                     <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">

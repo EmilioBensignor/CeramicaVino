@@ -15,6 +15,10 @@
     font-family: "Merriweather", serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 main {
     background-color: var(--color-blanco);
     color: var(--violeta-extra-oscuro);
@@ -115,7 +119,18 @@ h3,
     border-radius: 999px;
     box-shadow: 0px 2px 8px 0px #0000004D;
     color: var(--color-blanco);
+    cursor: pointer;
     padding: 0.875rem 3rem;
+}
+
+.login {
+    background-color: var(--color-lila);
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0px 2px 8px 0px #0000004D;
+    color: var(--color-negro);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
 }
 
 /* Menu */
@@ -148,6 +163,26 @@ h3,
     transform: translateY(0);
 }
 
+/* Autenticacion */
+
+.autenticacion {
+    display: grid;
+    grid:
+        "header" auto "main" 1fr "footer" auto / 1fr;
+}
+
+.autenticacion header {
+    grid-area: header;
+}
+
+.autenticacion main {
+    grid-area: main;
+}
+
+.autenticacion footer {
+    grid-area: footer;
+}
+
 /* Video */
 
 /* iOS */
@@ -159,5 +194,20 @@ h3,
 
     video {
         -webkit-playsinline: true;
+    }
+}
+
+/* Responsive */
+
+@media (width >=768px) {
+    .login {
+        font-size: 1.125rem;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+@media (width >=1080px) {
+    .login {
+        font-size: 1.25rem;
     }
 }
