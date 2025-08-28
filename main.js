@@ -338,7 +338,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Validación de Login
 document.addEventListener('DOMContentLoaded', function () {
-    // Solo ejecutar en la página de login
     if (document.getElementById('nombre-usuario')) {
         return;
     }
@@ -676,7 +675,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Validación de Reestablecer Contraseña
 document.addEventListener('DOMContentLoaded', function () {
-    // Solo ejecutar si está en la página de reestablecer contraseña
     if (!document.querySelector('h1') || !document.querySelector('h1').textContent.includes('Restablecer')) {
         return;
     }
