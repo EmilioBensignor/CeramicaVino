@@ -66,18 +66,18 @@
                 </svg>
                 Volver a iniciar sesión</a>
             <h1 class="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Restablecer contraseña</h1>
-            <form class="w-full max-w-md lg:max-w-xl flex flex-col gap-4">
+            <form action="#" class="w-full max-w-md lg:max-w-xl flex flex-col gap-4">
                 <p class="text-sm lg:text-base">
                     Ingrese el correo electrónico de su cuenta para poder reestablecer su contraseña.
                 </p>
                 <div>
-                    <label for="correo" class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo
+                    <label for="email" class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo
                         electrónico
                         <span class="text-vino">*</span></label>
-                    <input type="email" id="correo" name="correo" autocomplete="email"
-                        placeholder="Ingrese su correo electrónico" required
+                    <input type="email" id="email" name="email" autocomplete="email"
+                        placeholder="Ingrese su correo electrónico" required maxlength="40"
                         class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                    <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-correo">
+                    <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                             class="flex-shrink-0 text-red-500">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -86,7 +86,7 @@
                         <p class="text-red-500 text-xs"></p>
                     </div>
                 </div>
-                <button class="boton-primario lg:w-max lg:self-center">Reestablecer contraseña</button>
+                <input type="submit" value="Reestablecer contraseña" class="boton-primario lg:w-max lg:self-center cursor-pointer">
             </form>
         </section>
     </main>

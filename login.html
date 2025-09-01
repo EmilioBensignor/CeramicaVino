@@ -60,16 +60,16 @@
     <main class="flex flex-col items-center text-violeta-extra-oscuro">
         <section class="w-full max-w-[1375px] flex flex-col items-center gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Iniciar Sesión</h1>
-            <form class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
+            <form action="#" class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
                 <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                     <div class="lg:w-1/2">
-                        <label for="correo"
+                        <label for="email"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo electrónico
                             <span class="text-vino">*</span></label>
-                        <input type="email" id="correo" name="correo" autocomplete="email"
-                            placeholder="Ingrese su correo electrónico" required
+                        <input type="email" id="email" name="email" autocomplete="email"
+                            placeholder="Ingrese su correo electrónico" required maxlength="40"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-correo">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 class="flex-shrink-0 text-red-500">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -79,14 +79,14 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <label for="contraseña"
+                        <label for="password"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Contraseña <span
                                 class="text-vino">*</span></label>
                         <div class="relative">
-                            <input type="password" id="contraseña" name="contraseña" placeholder="********" required
+                            <input type="password" id="password" name="password" placeholder="********" required maxlength="30"
                                 autocomplete="current-password"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 pr-12">
-                            <button type="button" id="toggle-contraseña"
+                            <button type="button" id="toggle-password"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-violeta-oscuro transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -105,7 +105,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-contraseña">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-password">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 class="flex-shrink-0 text-red-500">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -115,12 +115,13 @@
                         </div>
                     </div>
                 </div>
-                <a href="./reestablecer-contrasena.html" class="text-center text-sm underline">¿Olvidaste tu contraseña?</a>
+                <a href="./reestablecer-contrasena.html" class="text-center text-sm underline">¿Olvidaste tu
+                    contraseña?</a>
                 <p class="flex justify-center items-center gap-1 text-center text-sm">
                     Si no tienes una cuenta,
                     <a href="./register.html" class="text-vino underline"> registrate</a>
                 </p>
-                <button class="boton-primario lg:w-max lg:self-center">Ingresar</button>
+                <input type="submit" value="Ingresar" class="boton-primario lg:w-max lg:self-center cursor-pointer">
             </form>
         </section>
     </main>

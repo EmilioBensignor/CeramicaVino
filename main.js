@@ -219,21 +219,22 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarFormulario() {
         let esValido = true;
 
-        const nombre = document.getElementById('nombre').value.trim();
+        const nombre = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const comentario = document.getElementById('comentario').value.trim();
+        const telefono = document.getElementById('phone').value.trim();
 
-        limpiarError('nombre');
+        limpiarError('name');
         limpiarError('email');
-        limpiarError('telefono');
-        limpiarError('comentario');
+        limpiarError('phone');
 
         if (!nombre) {
-            mostrarError('nombre', 'El nombre es requerido');
+            mostrarError('name', 'El nombre es requerido');
             esValido = false;
         } else if (nombre.length < 2) {
-            mostrarError('nombre', 'El nombre debe tener al menos 2 caracteres');
+            mostrarError('name', 'El nombre debe tener al menos 2 caracteres');
+            esValido = false;
+        } else if (nombre.length > 20) {
+            mostrarError('name', 'El nombre no debe tener más de 20 caracteres');
             esValido = false;
         }
 
@@ -243,13 +244,19 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (!validarEmail(email)) {
             mostrarError('email', 'Ingresa un email válido (ejemplo@dominio.com)');
             esValido = false;
+        } else if (email.length > 40) {
+            mostrarError('email', 'El email no debe tener más de 40 caracteres');
+            esValido = false;
         }
 
         if (!telefono) {
-            mostrarError('telefono', 'El teléfono es requerido');
+            mostrarError('phone', 'El teléfono es requerido');
             esValido = false;
         } else if (!validarTelefono(telefono)) {
-            mostrarError('telefono', 'Ingresa un teléfono válido (8-15 dígitos)');
+            mostrarError('phone', 'Ingresa un teléfono válido (8-15 dígitos)');
+            esValido = false;
+        } else if (telefono.length > 20) {
+            mostrarError('phone', 'El teléfono no debe tener más de 20 caracteres');
             esValido = false;
         }
 
@@ -263,20 +270,27 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        const comentario = document.getElementById('comment').value.trim();
+        
+        if (comentario.length > 300) {
+            mostrarError('comment', 'El comentario no debe tener más de 300 caracteres');
+            return;
+        }
+
         const datos = {
-            nombre: document.getElementById('nombre').value.trim(),
+            nombre: document.getElementById('name').value.trim(),
             email: document.getElementById('email').value.trim(),
-            telefono: document.getElementById('telefono').value.trim(),
-            comentario: document.getElementById('comentario').value.trim()
+            telefono: document.getElementById('phone').value.trim(),
+            comentario: comentario
         };
 
         console.log('Datos del formulario:', datos);
 
         formulario.reset();
-        limpiarError('nombre');
+        limpiarError('name');
         limpiarError('email');
-        limpiarError('telefono');
-        limpiarError('comentario');
+        limpiarError('phone');
+        limpiarError('comment');
         cerrarModal();
     });
 });
@@ -338,13 +352,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Validación de Login
 document.addEventListener('DOMContentLoaded', function () {
-    if (document.getElementById('nombre-usuario')) {
+    if (document.getElementById('username')) {
         return;
     }
     
     const formularioLogin = document.querySelector('form');
 
-    if (!formularioLogin || !document.getElementById('correo') || !document.getElementById('contraseña')) {
+    if (!formularioLogin || !document.getElementById('email') || !document.getElementById('password')) {
         return;
     }
 
@@ -374,33 +388,36 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarLogin() {
         let esValido = true;
 
-        const correo = document.getElementById('correo').value.trim();
-        const contraseña = document.getElementById('contraseña').value.trim();
+        const correo = document.getElementById('email').value.trim();
+        const contrasena = document.getElementById('password').value.trim();
 
-        limpiarError('correo');
-        limpiarError('contraseña');
+        limpiarError('email');
+        limpiarError('password');
 
         if (!correo) {
-            mostrarError('correo', 'El correo electrónico es requerido');
+            mostrarError('email', 'El correo electrónico es requerido');
             esValido = false;
         } else if (!validarEmail(correo)) {
-            mostrarError('correo', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
             esValido = false;
         }
 
-        if (!contraseña) {
-            mostrarError('contraseña', 'La contraseña es requerida');
+        if (!contrasena) {
+            mostrarError('password', 'La contraseña es requerida');
             esValido = false;
-        } else if (contraseña.length < 8) {
-            mostrarError('contraseña', 'La contraseña debe tener al menos 8 caracteres');
+        } else if (contrasena.length < 8) {
+            mostrarError('password', 'La contraseña debe tener al menos 8 caracteres');
+            esValido = false;
+        } else if (contrasena.length > 30) {
+            mostrarError('password', 'La contraseña no debe tener más de 30 caracteres');
             esValido = false;
         }
 
         return esValido;
     }
 
-    const toggleButton = document.getElementById('toggle-contraseña');
-    const passwordInput = document.getElementById('contraseña');
+    const toggleButton = document.getElementById('toggle-password');
+    const passwordInput = document.getElementById('password');
 
     if (toggleButton && passwordInput) {
         const eyeIcons = toggleButton.querySelectorAll('svg');
@@ -426,21 +443,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.getElementById('correo').addEventListener('blur', function() {
+    document.getElementById('email').addEventListener('blur', function() {
         const correo = this.value.trim();
-        limpiarError('correo');
+        limpiarError('email');
         
         if (correo && !validarEmail(correo)) {
-            mostrarError('correo', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
         }
     });
 
-    document.getElementById('contraseña').addEventListener('blur', function() {
+    document.getElementById('password').addEventListener('blur', function() {
         const contraseña = this.value.trim();
-        limpiarError('contraseña');
+        limpiarError('password');
         
         if (contraseña && contraseña.length < 8) {
-            mostrarError('contraseña', 'La contraseña debe tener al menos 8 caracteres');
+            mostrarError('password', 'La contraseña debe tener al menos 8 caracteres');
         }
     });
 
@@ -452,27 +469,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const datos = {
-            correo: document.getElementById('correo').value.trim(),
-            contraseña: document.getElementById('contraseña').value.trim()
+            correo: document.getElementById('email').value.trim(),
+            contraseña: document.getElementById('password').value.trim()
         };
 
         console.log('Datos de login:', datos);
         formularioLogin.reset();
-        limpiarError('correo');
-        limpiarError('contraseña');
+        limpiarError('email');
+        limpiarError('password');
         alert('Login exitoso! (Simulado)');
     });
 });
 
 // Validación de Registro
 document.addEventListener('DOMContentLoaded', function () {
-    if (!document.getElementById('nombre-usuario')) {
+    if (!document.getElementById('username')) {
         return;
     }
     
     const formularioRegistro = document.querySelector('form');
 
-    if (!formularioRegistro || !document.getElementById('repetir-contraseña')) {
+    if (!formularioRegistro || !document.getElementById('repeat-password')) {
         return;
     }
 
@@ -510,6 +527,10 @@ document.addEventListener('DOMContentLoaded', function () {
             errors.push('La contraseña debe tener al menos 8 caracteres');
         }
 
+        if (password.length > 30) {
+            errors.push('La contraseña no debe tener más de 30 caracteres');
+        }
+
         if (!/[a-z]/.test(password)) {
             errors.push('La contraseña debe contener al menos una minúscula');
         }
@@ -532,43 +553,49 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarRegistro() {
         let esValido = true;
 
-        const nombreUsuario = document.getElementById('nombre-usuario').value.trim();
-        const correo = document.getElementById('correo').value.trim();
-        const contraseña = document.getElementById('contraseña').value.trim();
-        const repetirContraseña = document.getElementById('repetir-contraseña').value.trim();
+        const nombreUsuario = document.getElementById('username').value.trim();
+        const correo = document.getElementById('email').value.trim();
+        const contrasena = document.getElementById('password').value.trim();
+        const repetirPassword = document.getElementById('repeat-password').value.trim();
 
-        limpiarError('nombre-usuario');
-        limpiarError('correo');
-        limpiarError('contraseña');
-        limpiarError('repetir-contraseña');
+        limpiarError('username');
+        limpiarError('email');
+        limpiarError('password');
+        limpiarError('repeat-password');
 
         if (!nombreUsuario) {
-            mostrarError('nombre-usuario', 'El nombre de usuario es requerido');
+            mostrarError('username', 'El nombre de usuario es requerido');
             esValido = false;
         } else if (nombreUsuario.length < 2) {
-            mostrarError('nombre-usuario', 'El nombre de usuario debe tener al menos 2 caracteres');
+            mostrarError('username', 'El nombre de usuario debe tener al menos 2 caracteres');
+            esValido = false;
+        } else if (nombreUsuario.length > 20) {
+            mostrarError('username', 'El nombre de usuario no debe tener más de 20 caracteres');
             esValido = false;
         }
 
         if (!correo) {
-            mostrarError('correo', 'El correo electrónico es requerido');
+            mostrarError('email', 'El correo electrónico es requerido');
             esValido = false;
         } else if (!validarEmail(correo)) {
-            mostrarError('correo', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            esValido = false;
+        } else if (correo.length > 40) {
+            mostrarError('email', 'El correo no debe tener más de 40 caracteres');
             esValido = false;
         }
 
-        const erroresPassword = validarPassword(contraseña);
+        const erroresPassword = validarPassword(contrasena);
         if (erroresPassword.length > 0) {
-            mostrarError('contraseña', erroresPassword[0]);
+            mostrarError('password', erroresPassword[0]);
             esValido = false;
         }
 
-        if (!repetirContraseña) {
-            mostrarError('repetir-contraseña', 'Repetir contraseña es requerido');
+        if (!repetirPassword) {
+            mostrarError('repeat-password', 'Repetir contraseña es requerido');
             esValido = false;
-        } else if (contraseña !== repetirContraseña) {
-            mostrarError('repetir-contraseña', 'Las contraseñas no coinciden');
+        } else if (contrasena !== repetirPassword) {
+            mostrarError('repeat-password', 'Las contraseñas no coinciden');
             esValido = false;
         }
 
@@ -576,8 +603,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const toggleButtons = [
-        { buttonId: 'toggle-contraseña', inputId: 'contraseña' },
-        { buttonId: 'toggle-repetir-contraseña', inputId: 'repetir-contraseña' }
+        { buttonId: 'toggle-password', inputId: 'password' },
+        { buttonId: 'toggle-repeat-password', inputId: 'repeat-password' }
     ];
 
     toggleButtons.forEach(({ buttonId, inputId }) => {
@@ -609,43 +636,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.getElementById('nombre-usuario').addEventListener('blur', function () {
+    document.getElementById('username').addEventListener('blur', function () {
         const nombreUsuario = this.value.trim();
-        limpiarError('nombre-usuario');
+        limpiarError('username');
 
         if (nombreUsuario && nombreUsuario.length < 2) {
-            mostrarError('nombre-usuario', 'El nombre de usuario debe tener al menos 2 caracteres');
+            mostrarError('username', 'El nombre de usuario debe tener al menos 2 caracteres');
         }
     });
 
-    document.getElementById('correo').addEventListener('blur', function () {
+    document.getElementById('email').addEventListener('blur', function () {
         const correo = this.value.trim();
-        limpiarError('correo');
+        limpiarError('email');
 
         if (correo && !validarEmail(correo)) {
-            mostrarError('correo', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
         }
     });
 
-    document.getElementById('contraseña').addEventListener('blur', function () {
+    document.getElementById('password').addEventListener('blur', function () {
         const contraseña = this.value.trim();
-        limpiarError('contraseña');
+        limpiarError('password');
 
         if (contraseña) {
             const errores = validarPassword(contraseña);
             if (errores.length > 0) {
-                mostrarError('contraseña', errores[0]);
+                mostrarError('password', errores[0]);
             }
         }
     });
 
-    document.getElementById('repetir-contraseña').addEventListener('blur', function () {
-        const contraseña = document.getElementById('contraseña').value.trim();
+    document.getElementById('repeat-password').addEventListener('blur', function () {
+        const contraseña = document.getElementById('password').value.trim();
         const repetirContraseña = this.value.trim();
-        limpiarError('repetir-contraseña');
+        limpiarError('repeat-password');
 
         if (repetirContraseña && contraseña !== repetirContraseña) {
-            mostrarError('repetir-contraseña', 'Las contraseñas no coinciden');
+            mostrarError('repeat-password', 'Las contraseñas no coinciden');
         }
     });
 
@@ -657,19 +684,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const datos = {
-            nombreUsuario: document.getElementById('nombre-usuario').value.trim(),
-            correo: document.getElementById('correo').value.trim(),
-            contraseña: document.getElementById('contraseña').value.trim()
+            nombreUsuario: document.getElementById('username').value.trim(),
+            correo: document.getElementById('email').value.trim(),
+            contraseña: document.getElementById('password').value.trim()
         };
 
         console.log('Datos de registro:', datos);
         alert('Registro exitoso! (Simulado)');
 
         formularioRegistro.reset();
-        limpiarError('nombre-usuario');
-        limpiarError('correo');
-        limpiarError('contraseña');
-        limpiarError('repetir-contraseña');
+        limpiarError('username');
+        limpiarError('email');
+        limpiarError('password');
+        limpiarError('repeat-password');
     });
 });
 
@@ -681,7 +708,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     const formularioReset = document.querySelector('form');
 
-    if (!formularioReset || !document.getElementById('correo')) {
+    if (!formularioReset || !document.getElementById('email')) {
         return;
     }
 
@@ -711,27 +738,30 @@ document.addEventListener('DOMContentLoaded', function () {
     function validarReset() {
         let esValido = true;
 
-        const correo = document.getElementById('correo').value.trim();
+        const correo = document.getElementById('email').value.trim();
 
-        limpiarError('correo');
+        limpiarError('email');
 
         if (!correo) {
-            mostrarError('correo', 'El correo electrónico es requerido');
+            mostrarError('email', 'El correo electrónico es requerido');
             esValido = false;
         } else if (!validarEmail(correo)) {
-            mostrarError('correo', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            esValido = false;
+        } else if (correo.length > 40) {
+            mostrarError('email', 'El correo no debe tener más de 40 caracteres');
             esValido = false;
         }
 
         return esValido;
     }
 
-    document.getElementById('correo').addEventListener('blur', function() {
+    document.getElementById('email').addEventListener('blur', function() {
         const correo = this.value.trim();
-        limpiarError('correo');
+        limpiarError('email');
         
         if (correo && !validarEmail(correo)) {
-            mostrarError('correo', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
+            mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
         }
     });
 
@@ -743,14 +773,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const datos = {
-            correo: document.getElementById('correo').value.trim()
+            correo: document.getElementById('email').value.trim()
         };
 
         console.log('Datos de reset:', datos);
         alert('Enlace de reestablecimiento enviado a tu correo! (Simulado)');
         
         formularioReset.reset();
-        limpiarError('correo');
+        limpiarError('email');
     });
 });
 

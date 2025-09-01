@@ -343,15 +343,16 @@
                     </button>
                 </div>
 
-                <form id="formulario-contacto" class="flex flex-col gap-4">
+                <form action="#" id="formulario-contacto" class="flex flex-col gap-4">
                     <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                         <div class="lg:w-1/2">
-                            <label for="nombre"
+                            <label for="name"
                                 class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Nombre <span
                                     class="text-vino">*</span></label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required
+                            <input type="text" id="name" name="name" placeholder="Ingrese su nombre" autocomplete="name"
+                                required maxlength="20"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-nombre">
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-name">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                     class="flex-shrink-0 text-red-500">
                                     <path fill="none" stroke="currentColor" stroke-linecap="round"
@@ -367,7 +368,7 @@
                                 class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Email <span
                                     class="text-vino">*</span></label>
                             <input type="email" autocomplete="email" id="email" name="email"
-                                placeholder="Ingrese su email" required
+                                placeholder="Ingrese su email" required maxlength="40"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                             <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
@@ -383,11 +384,12 @@
 
                     <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                         <div class="lg:w-1/2">
-                            <label for="telefono"
+                            <label for="phone"
                                 class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required
+                            <input type="tel" id="phone" name="phone" autocomplete="photo"
+                                placeholder="Ingrese su teléfono" required maxlength="20"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-telefono">
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-phone">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                     class="flex-shrink-0 text-red-500">
                                     <path fill="none" stroke="currentColor" stroke-linecap="round"
@@ -399,11 +401,12 @@
                         </div>
 
                         <div class="lg:w-1/2">
-                            <label for="comentario"
+                            <label for="comment"
                                 class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Comentario</label>
-                            <textarea id="comentario" name="comentario" rows="5" placeholder="Ingrese su comentario"
+                            <textarea id="comment" name="comment" rows="5" placeholder="Ingrese su comentario"
+                                maxlength="300"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
-                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-comentario">
+                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-comment">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                     class="flex-shrink-0 text-red-500">
                                     <path fill="none" stroke="currentColor" stroke-linecap="round"
@@ -415,9 +418,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="boton-primario self-end mt-2">
-                        Enviar mensaje
-                    </button>
+                    <input type="submit" value="Enviar mensaje" class="boton-primario self-end mt-2 cursor-pointer">
                 </form>
             </div>
         </div>

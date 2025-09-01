@@ -60,16 +60,16 @@
     <main class="flex flex-col items-center text-violeta-extra-oscuro">
         <section class="w-full max-w-[1375px] flex flex-col items-center gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Registrarse</h1>
-            <form class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
+            <form action="#" class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
                 <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                     <div class="lg:w-1/2">
-                        <label for="Nombre de usuario"
+                        <label for="username"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Nombre de usuario
                             <span class="text-vino">*</span></label>
-                        <input type="text" id="nombre-usuario" name="nombre-usuario" autocomplete="username"
-                            placeholder="Ingrese su nombre de usuario" required
+                        <input type="text" id="username" name="username" autocomplete="username"
+                            placeholder="Ingrese su nombre de usuario" required maxlength="20"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-nombre-usuario">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-username">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 class="flex-shrink-0 text-red-500">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -79,13 +79,13 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <label for="Correo electronico"
+                        <label for="email"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo electrónico
                             <span class="text-vino">*</span></label>
-                        <input type="email" id="correo" name="correo" autocomplete="email"
-                            placeholder="Ingrese su correo electrónico" required
+                        <input type="email" id="email" name="email" autocomplete="email"
+                            placeholder="Ingrese su correo electrónico" required maxlength="40"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-correo">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 class="flex-shrink-0 text-red-500">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -97,14 +97,14 @@
                 </div>
                 <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                     <div class="lg:w-1/2">
-                        <label for="contraseña"
+                        <label for="password"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Contraseña <span
                                 class="text-vino">*</span></label>
                         <div class="relative">
-                            <input type="password" id="contraseña" name="contraseña" placeholder="********" required
+                            <input type="password" id="password" name="password" placeholder="********" required maxlength="30"
                                 autocomplete="new-password"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 pr-12">
-                            <button type="button" id="toggle-contraseña"
+                            <button type="button" id="toggle-password"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-violeta-oscuro transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -123,7 +123,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-contraseña">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-password">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 class="flex-shrink-0 text-red-500">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -133,14 +133,14 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <label for="repetir-contraseña"
+                        <label for="repeat-password"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Repetir contraseña
                             <span class="text-vino">*</span></label>
                         <div class="relative">
-                            <input type="password" id="repetir-contraseña" name="repetir-contraseña"
-                                placeholder="********" required autocomplete="new-password"
+                            <input type="password" id="repeat-password" name="repeat-password"
+                                placeholder="********" required autocomplete="new-password" maxlength="30"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 pr-12">
-                            <button type="button" id="toggle-repetir-contraseña"
+                            <button type="button" id="toggle-repeat-password"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-violeta-oscuro transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                                     <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -159,7 +159,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-repetir-contraseña">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-repeat-password">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
                                 class="flex-shrink-0 text-red-500">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -173,7 +173,7 @@
                     Si ya tienes una cuenta,
                     <a href="./login.html" class="text-vino underline"> inicia sesión</a>
                 </p>
-                <button class="boton-primario lg:w-max lg:self-center">Crear cuenta</button>
+                <input type="submit" value="Crear cuenta" class="boton-primario lg:w-max lg:self-center cursor-pointer">
             </form>
         </section>
     </main>
