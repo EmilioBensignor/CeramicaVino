@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (nombre.length < 2) {
             mostrarError('name', 'El nombre debe tener al menos 2 caracteres');
             esValido = false;
-        } else if (nombre.length > 20) {
-            mostrarError('name', 'El nombre no debe tener más de 20 caracteres');
+        } else if (nombre.length > 30) {
+            mostrarError('name', 'El nombre no debe tener más de 30 caracteres');
             esValido = false;
         }
 
@@ -244,8 +244,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (!validarEmail(email)) {
             mostrarError('email', 'Ingresa un email válido (ejemplo@dominio.com)');
             esValido = false;
-        } else if (email.length > 40) {
-            mostrarError('email', 'El email no debe tener más de 40 caracteres');
+        } else if (email.length > 150) {
+            mostrarError('email', 'El email no debe tener más de 150 caracteres');
             esValido = false;
         }
 
@@ -253,10 +253,10 @@ document.addEventListener('DOMContentLoaded', function () {
             mostrarError('phone', 'El teléfono es requerido');
             esValido = false;
         } else if (!validarTelefono(telefono)) {
-            mostrarError('phone', 'Ingresa un teléfono válido (8-15 dígitos)');
+            mostrarError('phone', 'Ingresa un teléfono válido (8-20 dígitos)');
             esValido = false;
-        } else if (telefono.length > 20) {
-            mostrarError('phone', 'El teléfono no debe tener más de 20 caracteres');
+        } else if (telefono.length > 40) {
+            mostrarError('phone', 'El teléfono no debe tener más de 40 caracteres');
             esValido = false;
         }
 
@@ -272,10 +272,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const comentario = document.getElementById('comment').value.trim();
         
-        if (comentario.length > 300) {
-            mostrarError('comment', 'El comentario no debe tener más de 300 caracteres');
-            return;
-        }
 
         const datos = {
             nombre: document.getElementById('name').value.trim(),
@@ -569,8 +565,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (nombreUsuario.length < 2) {
             mostrarError('username', 'El nombre de usuario debe tener al menos 2 caracteres');
             esValido = false;
-        } else if (nombreUsuario.length > 20) {
-            mostrarError('username', 'El nombre de usuario no debe tener más de 20 caracteres');
+        } else if (nombreUsuario.length > 30) {
+            mostrarError('username', 'El nombre de usuario no debe tener más de 30 caracteres');
             esValido = false;
         }
 
@@ -580,8 +576,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (!validarEmail(correo)) {
             mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
             esValido = false;
-        } else if (correo.length > 40) {
-            mostrarError('email', 'El correo no debe tener más de 40 caracteres');
+        } else if (correo.length > 150) {
+            mostrarError('email', 'El correo no debe tener más de 150 caracteres');
             esValido = false;
         }
 
@@ -748,8 +744,8 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (!validarEmail(correo)) {
             mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
             esValido = false;
-        } else if (correo.length > 40) {
-            mostrarError('email', 'El correo no debe tener más de 40 caracteres');
+        } else if (correo.length > 150) {
+            mostrarError('email', 'El correo no debe tener más de 150 caracteres');
             esValido = false;
         }
 

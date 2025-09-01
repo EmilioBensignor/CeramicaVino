@@ -67,7 +67,7 @@
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Nombre de usuario
                             <span class="text-vino">*</span></label>
                         <input type="text" id="username" name="username" autocomplete="username"
-                            placeholder="Ingrese su nombre de usuario" required maxlength="20"
+                            placeholder="Ingrese su nombre de usuario" required maxlength="30"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                         <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-username">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
@@ -83,7 +83,7 @@
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo electrónico
                             <span class="text-vino">*</span></label>
                         <input type="email" id="email" name="email" autocomplete="email"
-                            placeholder="Ingrese su correo electrónico" required maxlength="40"
+                            placeholder="Ingrese su correo electrónico" required maxlength="150"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                         <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
@@ -101,8 +101,8 @@
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Contraseña <span
                                 class="text-vino">*</span></label>
                         <div class="relative">
-                            <input type="password" id="password" name="password" placeholder="********" required maxlength="30"
-                                autocomplete="new-password"
+                            <input type="password" id="password" name="password" placeholder="********" required
+                                maxlength="30" autocomplete="new-password"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 pr-12">
                             <button type="button" id="toggle-password"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-violeta-oscuro transition-colors">
@@ -137,8 +137,8 @@
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Repetir contraseña
                             <span class="text-vino">*</span></label>
                         <div class="relative">
-                            <input type="password" id="repeat-password" name="repeat-password"
-                                placeholder="********" required autocomplete="new-password" maxlength="30"
+                            <input type="password" id="repeat-password" name="repeat-password" placeholder="********"
+                                required autocomplete="new-password" maxlength="30"
                                 class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 pr-12">
                             <button type="button" id="toggle-repeat-password"
                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-violeta-oscuro transition-colors">
