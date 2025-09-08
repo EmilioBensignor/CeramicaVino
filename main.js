@@ -264,25 +264,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     formulario.addEventListener('submit', (e) => {
-        e.preventDefault();
-
         if (!validarFormulario()) {
+            e.preventDefault();
             return;
         }
 
-        const comentario = document.getElementById('comment').value.trim();
-        
-
-        const datos = {
-            nombre: document.getElementById('name').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            telefono: document.getElementById('phone').value.trim(),
-            comentario: comentario
-        };
-
-        console.log('Datos del formulario:', datos);
-
-        formulario.reset();
         limpiarError('name');
         limpiarError('email');
         limpiarError('phone');
@@ -351,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('username')) {
         return;
     }
-    
+
     const formularioLogin = document.querySelector('form');
 
     if (!formularioLogin || !document.getElementById('email') || !document.getElementById('password')) {
@@ -439,19 +425,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.getElementById('email').addEventListener('blur', function() {
+    document.getElementById('email').addEventListener('blur', function () {
         const correo = this.value.trim();
         limpiarError('email');
-        
+
         if (correo && !validarEmail(correo)) {
             mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
         }
     });
 
-    document.getElementById('password').addEventListener('blur', function() {
+    document.getElementById('password').addEventListener('blur', function () {
         const contraseña = this.value.trim();
         limpiarError('password');
-        
+
         if (contraseña && contraseña.length < 8) {
             mostrarError('password', 'La contraseña debe tener al menos 8 caracteres');
         }
@@ -482,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!document.getElementById('username')) {
         return;
     }
-    
+
     const formularioRegistro = document.querySelector('form');
 
     if (!formularioRegistro || !document.getElementById('repeat-password')) {
@@ -701,7 +687,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!document.querySelector('h1') || !document.querySelector('h1').textContent.includes('Restablecer')) {
         return;
     }
-    
+
     const formularioReset = document.querySelector('form');
 
     if (!formularioReset || !document.getElementById('email')) {
@@ -752,16 +738,16 @@ document.addEventListener('DOMContentLoaded', function () {
         return esValido;
     }
 
-    document.getElementById('email').addEventListener('blur', function() {
+    document.getElementById('email').addEventListener('blur', function () {
         const correo = this.value.trim();
         limpiarError('email');
-        
+
         if (correo && !validarEmail(correo)) {
             mostrarError('email', 'Ingresa un correo electrónico válido (ejemplo@dominio.com)');
         }
     });
 
-    formularioReset.addEventListener('submit', function(e) {
+    formularioReset.addEventListener('submit', function (e) {
         e.preventDefault();
 
         if (!validarReset()) {
@@ -774,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Datos de reset:', datos);
         alert('Enlace de reestablecimiento enviado a tu correo! (Simulado)');
-        
+
         formularioReset.reset();
         limpiarError('email');
     });

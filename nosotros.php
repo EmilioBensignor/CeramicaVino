@@ -26,11 +26,11 @@
                         stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <a href="./index.html" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
+            <a href="./index.php" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
             <nav class="hidden lg:flex">
                 <ul class="flex items-center gap-5 2xl:gap-7">
-                    <li><a href="./nosotros.html" class="lg:text-xl">Nosotros</a></li>
-                    <li class="flex"><a href="./login.html" class="login">Iniciar Sesión</a></li>
+                    <li><a href="./nosotros.php" class="lg:text-xl">Nosotros</a></li>
+                    <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,13 +45,13 @@
             <nav class="mt-6 md:mt-10">
                 <ul class="flex flex-col gap-4 md:gap-6 text-blanco">
                     <li>
-                        <a href="./index.html" class="md:text-xl">Inicio</a>
+                        <a href="./index.php" class="md:text-xl">Inicio</a>
                     </li>
                     <li>
-                        <a href="./nosotros.html" class="md:text-xl">Nosotros</a>
+                        <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
                     </li>
                     <li class="flex">
-                        <a href="./login.html" class="login">Iniciar Sesión</a>
+                        <a href="./login.php" class="login">Iniciar Sesión</a>
                     </li>
                 </ul>
             </nav>
@@ -343,7 +343,7 @@
                     </button>
                 </div>
 
-                <form action="#" id="formulario-contacto" class="flex flex-col gap-4">
+                <form action="/CeramicaVino/componentes/consultas.php" method="POST" id="formulario-contacto" class="flex flex-col gap-4">
                     <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                         <div class="lg:w-1/2">
                             <label for="name"
@@ -427,12 +427,12 @@
         <div class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">
             <div
                 class="max-w-[1375px] flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 md:gap-10 mx-auto">
-                <a href="./index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
+                <a href="./index.php" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
                 <nav>
                     <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">
                         <div class="flex flex-col gap-3">
                             <li>
-                                <a class="text-xs sm:text-sm lg:text-base" href="./nosotros.html">Nosotros</a>
+                                <a class="text-xs sm:text-sm lg:text-base" href="./nosotros.php">Nosotros</a>
                             </li>
                         </div>
                         <div class="flex flex-col gap-3 lg:gap-4 2xl:gap-8">

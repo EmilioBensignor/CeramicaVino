@@ -26,11 +26,11 @@
                         stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-            <a href="./index.html" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
+            <a href="./index.php" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
             <nav class="hidden lg:flex">
                 <ul class="flex items-center gap-5 2xl:gap-7">
-                    <li><a href="./nosotros.html" class="lg:text-xl">Nosotros</a></li>
-                    <li class="flex"><a href="./login.html" class="login">Iniciar Sesión</a></li>
+                    <li><a href="./nosotros.php" class="lg:text-xl">Nosotros</a></li>
+                    <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,13 +45,13 @@
             <nav class="mt-6 md:mt-10">
                 <ul class="flex flex-col gap-4 md:gap-6 text-blanco">
                     <li>
-                        <a href="./index.html" class="md:text-xl">Inicio</a>
+                        <a href="./index.php" class="md:text-xl">Inicio</a>
                     </li>
                     <li>
-                        <a href="./nosotros.html" class="md:text-xl">Nosotros</a>
+                        <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
                     </li>
                     <li class="flex">
-                        <a href="./login.html" class="login">Iniciar Sesión</a>
+                        <a href="./login.php" class="login">Iniciar Sesión</a>
                     </li>
                 </ul>
             </nav>
@@ -59,35 +59,69 @@
     </div>
     <main class="flex flex-col items-center text-violeta-extra-oscuro">
         <section class="w-full max-w-[1375px] flex flex-col items-center gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
-            <a href="./login.html" class="w-full flex items-center gap-2 text-sm lg:text-base">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" d="M5 12h14M5 12l4 4m-4-4l4-4" />
-                </svg>
-                Volver a iniciar sesión</a>
-            <h1 class="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Restablecer contraseña</h1>
-            <form action="#" class="w-full max-w-md lg:max-w-xl flex flex-col gap-4">
-                <p class="text-sm lg:text-base">
-                    Ingrese el correo electrónico de su cuenta para poder reestablecer su contraseña.
-                </p>
-                <div>
-                    <label for="email" class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo
-                        electrónico
-                        <span class="text-vino">*</span></label>
-                    <input type="email" id="email" name="email" autocomplete="email"
-                        placeholder="Ingrese su correo electrónico" required maxlength="150"
-                        class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
-                    <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                            class="flex-shrink-0 text-red-500">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
-                        </svg>
-                        <p class="text-red-500 text-xs"></p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Iniciar Sesión</h1>
+            <form action="#" class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
+                <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
+                    <div class="lg:w-1/2">
+                        <label for="email"
+                            class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Correo electrónico
+                            <span class="text-vino">*</span></label>
+                        <input type="email" id="email" name="email" autocomplete="email"
+                            placeholder="Ingrese su correo electrónico" required maxlength="150"
+                            class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-email">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                class="flex-shrink-0 text-red-500">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                            </svg>
+                            <p class="text-red-500 text-xs"></p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <label for="password"
+                            class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Contraseña <span
+                                class="text-vino">*</span></label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" placeholder="********" required
+                                maxlength="30" autocomplete="current-password"
+                                class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 pr-12">
+                            <button type="button" id="toggle-password"
+                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-violeta-oscuro transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0" />
+                                        <path d="M21 12q-3.6 6-9 6t-9-6q3.6-6 9-6t9 6" />
+                                    </g>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                                        <path
+                                            d="M16.681 16.673A8.7 8.7 0 0 1 12 18q-5.4 0-9-6q1.908-3.18 4.32-4.674m2.86-1.146A9 9 0 0 1 12 6q5.4 0 9 6q-1 1.665-2.138 2.87M3 3l18 18" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-password">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                class="flex-shrink-0 text-red-500">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                            </svg>
+                            <p class="text-red-500 text-xs"></p>
+                        </div>
                     </div>
                 </div>
-                <input type="submit" value="Reestablecer contraseña"
-                    class="boton-primario lg:w-max lg:self-center cursor-pointer">
+                <a href="./reestablecer-contrasena.php" class="text-center text-sm underline">¿Olvidaste tu
+                    contraseña?</a>
+                <p class="flex justify-center items-center gap-1 text-center text-sm">
+                    Si no tienes una cuenta,
+                    <a href="./register.php" class="text-vino underline"> registrate</a>
+                </p>
+                <input type="submit" value="Ingresar" class="boton-primario lg:w-max lg:self-center cursor-pointer">
             </form>
         </section>
     </main>
@@ -96,12 +130,12 @@
         <div class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">
             <div
                 class="max-w-[1375px] flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center gap-6 md:gap-10 mx-auto">
-                <a href="./index.html" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
+                <a href="./index.php" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
                 <nav>
                     <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">
                         <div class="flex flex-col gap-3">
                             <li>
-                                <a class="text-xs sm:text-sm lg:text-base" href="./nosotros.html">Nosotros</a>
+                                <a class="text-xs sm:text-sm lg:text-base" href="./nosotros.php">Nosotros</a>
                             </li>
                         </div>
                         <div class="flex flex-col gap-3 lg:gap-4 2xl:gap-8">
