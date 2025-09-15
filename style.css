@@ -133,6 +133,10 @@ h3,
     padding: 0.5rem 1rem;
 }
 
+#cruz-cerrar {
+    cursor: pointer;
+}
+
 /* Menu */
 
 .menu-lateral {

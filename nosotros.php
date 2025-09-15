@@ -343,7 +343,8 @@
                     </button>
                 </div>
 
-                <form action="/CeramicaVino/componentes/consultas.php" method="POST" id="formulario-contacto" class="flex flex-col gap-4">
+                <form action="/CeramicaVino/componentes/consultas.php" method="POST" id="formulario-contacto"
+                    class="flex flex-col gap-4">
                     <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                         <div class="lg:w-1/2">
                             <label for="name"
@@ -422,6 +423,21 @@
             </div>
         </div>
     </div>
+    <!-- Modal exito -->
+    <?php if (isset($_GET['ok_consulta'])) { ?>
+        <div id="modal-exito" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
+                <div class="w-full flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold text-vino">¡Mensaje Enviado!</h3>
+                    <button onclick="cerrarModalExito()"
+                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
+                </div>
+                <p class="text-dark">¡Gracias por contactarnos! Te responderemos a la brevedad.</p>
+                <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
+            </div>
+        </div>
+        <script>document.body.style.overflow = 'hidden';</script>
+    <?php } ?>
     <!-- Footer -->
     <footer>
         <div class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">

@@ -154,16 +154,20 @@ document.addEventListener('DOMContentLoaded', function () {
     function abrirModal() {
         modal.classList.remove('opacity-0', 'invisible');
         modal.classList.add('opacity-100', 'visible');
-        modalContent.classList.remove('scale-95');
-        modalContent.classList.add('scale-100');
+        if (modalContent) {
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
         document.body.style.overflow = 'hidden';
     }
 
     function cerrarModal() {
         modal.classList.remove('opacity-100', 'visible');
         modal.classList.add('opacity-0', 'invisible');
-        modalContent.classList.remove('scale-100');
-        modalContent.classList.add('scale-95');
+        if (modalContent) {
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
         document.body.style.overflow = '';
     }
 
@@ -174,7 +178,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    botonCerrar.addEventListener('click', cerrarModal);
+    if (botonCerrar) {
+        botonCerrar.addEventListener('click', cerrarModal);
+    }
 
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
@@ -263,18 +269,20 @@ document.addEventListener('DOMContentLoaded', function () {
         return esValido;
     }
 
-    formulario.addEventListener('submit', (e) => {
-        if (!validarFormulario()) {
-            e.preventDefault();
-            return;
-        }
+    if (formulario) {
+        formulario.addEventListener('submit', (e) => {
+            if (!validarFormulario()) {
+                e.preventDefault();
+                return;
+            }
 
-        limpiarError('name');
-        limpiarError('email');
-        limpiarError('phone');
-        limpiarError('comment');
-        cerrarModal();
-    });
+            limpiarError('name');
+            limpiarError('email');
+            limpiarError('phone');
+            limpiarError('comment');
+            cerrarModal();
+        });
+    }
 });
 
 // Carousel Equipo
@@ -765,6 +773,15 @@ document.addEventListener('DOMContentLoaded', function () {
         limpiarError('email');
     });
 });
+
+// Modal de éxito
+function cerrarModalExito() {
+    const modal = document.getElementById('modal-exito');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
 
 // Animaciones Fade-up
 document.addEventListener('DOMContentLoaded', function () {

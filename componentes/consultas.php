@@ -9,5 +9,7 @@ $comment = $_POST['comment'];
 include 'conexion.php';
 
 // Enviar datos a la tabla
-
 mysqli_query($datosDB, "INSERT INTO consultas VALUES (DEFAULT, '$nombre', '$email', '$phone', '$comment')");
+
+header("Location: ../index.php?ok_consulta");
+?>
