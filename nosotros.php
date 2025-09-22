@@ -343,7 +343,7 @@
                     </button>
                 </div>
 
-                <form action="/CeramicaVino/componentes/consultas.php" method="POST" id="formulario-contacto"
+                <form action="componentes/consultas.php" method="POST" id="formulario-contacto"
                     class="flex flex-col gap-4">
                     <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                         <div class="lg:w-1/2">
