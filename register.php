@@ -60,7 +60,8 @@
     <main class="flex flex-col items-center text-violeta-extra-oscuro">
         <section class="w-full max-w-[1375px] flex flex-col items-center gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Registrarse</h1>
-            <form action="#" class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
+            <form action="/CeramicaVino/componentes/registrar_cliente.php" method="POST"
+                class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
                 <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
                     <div class="lg:w-1/2">
                         <label for="username"
@@ -177,6 +178,21 @@
             </form>
         </section>
     </main>
+    <!-- Modal exito -->
+    <?php if (isset($_GET['usuario_inexistente'])) { ?>
+        <div id="modal-exito" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
+                <div class="w-full flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold text-vino">No se encontró un usuario</h3>
+                    <button onclick="cerrarModalExito()"
+                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
+                </div>
+                <p class="text-dark">Llena el formulario para registrarte</p>
+                <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
+            </div>
+        </div>
+        <script>document.body.style.overflow = 'hidden';</script>
+    <?php } ?>
     <!-- Footer -->
     <footer>
         <div class="w-full bg-vino text-blanco p-6 md:p-10 lg:p-16 2xl:px-0">

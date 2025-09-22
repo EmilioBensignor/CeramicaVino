@@ -381,9 +381,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const correo = document.getElementById('email').value.trim();
         const contrasena = document.getElementById('password').value.trim();
 
-        limpiarError('email');
-        limpiarError('password');
-
         if (!correo) {
             mostrarError('email', 'El correo electrónico es requerido');
             esValido = false;
@@ -451,24 +448,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    formularioLogin.addEventListener('submit', function (e) {
-        e.preventDefault();
+    if (formularioLogin) {
+        formularioLogin.addEventListener('submit', function (e) {
+            if (!validarLogin()) {
+                e.preventDefault();
+                return;
+            }
 
-        if (!validarLogin()) {
-            return;
-        }
-
-        const datos = {
-            correo: document.getElementById('email').value.trim(),
-            contraseña: document.getElementById('password').value.trim()
-        };
-
-        console.log('Datos de login:', datos);
-        formularioLogin.reset();
-        limpiarError('email');
-        limpiarError('password');
-        alert('Login exitoso! (Simulado)');
-    });
+            limpiarError('email');
+            limpiarError('password');
+        });
+    }
 });
 
 // Validación de Registro
@@ -666,28 +656,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    formularioRegistro.addEventListener('submit', function (e) {
-        e.preventDefault();
+    if (formularioRegistro) {
+        formularioRegistro.addEventListener('submit', function (e) {
 
-        if (!validarRegistro()) {
-            return;
-        }
+            if (!validarRegistro()) {
+                e.preventDefault();
+                return;
+            }
 
-        const datos = {
-            nombreUsuario: document.getElementById('username').value.trim(),
-            correo: document.getElementById('email').value.trim(),
-            contraseña: document.getElementById('password').value.trim()
-        };
-
-        console.log('Datos de registro:', datos);
-        alert('Registro exitoso! (Simulado)');
-
-        formularioRegistro.reset();
-        limpiarError('username');
-        limpiarError('email');
-        limpiarError('password');
-        limpiarError('repeat-password');
-    });
+            limpiarError('username');
+            limpiarError('email');
+            limpiarError('password');
+            limpiarError('repeat-password');
+        });
+    }
 });
 
 // Validación de Reestablecer Contraseña
