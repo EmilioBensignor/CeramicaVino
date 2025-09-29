@@ -64,7 +64,7 @@
     <main class="flex flex-col text-violeta-extra-oscuro">
         <!-- Hero -->
         <section
-            class="w-full flex flex-col md:flex-row items-center sticky top-0 z-[1] -mt-[68px] md:-mt-[70px] lg:-mt-[88px]">
+            class="w-full flex flex-col md:flex-row items-center sticky top-0 z-[1] -mt-[68px] md:-mt-[88px] lg:-mt-[102px]">
             <video src="./videos/Ceramica-y-Vino.mp4" class="w-full h-screen object-cover" autoplay muted loop
                 playsinline></video>
             <div
