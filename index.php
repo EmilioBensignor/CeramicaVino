@@ -28,7 +28,8 @@
             </button>
             <a href="./index.php" class="text-2xl sm:text-3xl md:text-4xl font-bebas">Ceramica y vino</a>
             <nav class="hidden lg:flex">
-                <ul class="flex items-center gap-5 2xl:gap-7">
+                <ul class="flex items-center gap-5 2xl:gap-8">
+                    <li><a href="./piezas.php" class="lg:text-xl">Piezas</a></li>
                     <li><a href="./nosotros.php" class="lg:text-xl">Nosotros</a></li>
                     <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
                 </ul>
@@ -46,6 +47,9 @@
                 <ul class="flex flex-col gap-4 md:gap-6 text-blanco">
                     <li>
                         <a href="./index.php" class="md:text-xl">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./piezas.php" class="md:text-xl">Piezas</a>
                     </li>
                     <li>
                         <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
@@ -708,7 +712,8 @@
             <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
                 <div class="w-full flex justify-between items-center">
                     <h3 class="text-2xl font-semibold text-vino">¡Mensaje Enviado!</h3>
-                    <button onclick="cerrarModalExito()" class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
+                    <button onclick="cerrarModalExito()"
+                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
                 </div>
                 <p class="text-dark">¡Gracias por contactarnos! Te responderemos a la brevedad.</p>
                 <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
@@ -724,7 +729,10 @@
                 <a href="./index.php" class="text-2xl sm:text-3xl font-bebas">Ceramica y vino</a>
                 <nav>
                     <ul class="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 2xl:gap-16">
-                        <div class="flex flex-col gap-3">
+                        <div class="flex flex-col md:flex-row gap-3 md:gap-8">
+                            <li>
+                                <a class="text-xs sm:text-sm lg:text-base" href="./piezas.php">Piezas</a>
+                            </li>
                             <li>
                                 <a class="text-xs sm:text-sm lg:text-base" href="./nosotros.php">Nosotros</a>
                             </li>
