@@ -153,21 +153,13 @@
                         </div>
                     </div>
                     <div class="md:w-1/2 flex flex-col items-start gap-3">
-                        <p class="text-sm md:text-base text-violeta-oscuro font-medium">Opciones</p>
+                        <p class="text-sm md:text-base text-violeta-oscuro font-medium">En stock</p>
 
                         <div class="md:flex md:gap-4">
                             <div class="flex items-center gap-2">
                                 <input type="checkbox" id="stock" name="stock" value="1"
                                     class="w-4 h-4 md:w-5 md:h-5 border border-gray-400 rounded outline-none accent-vino cursor-pointer">
-                                <label for="stock" class="text-sm md:text-base text-violeta-oscuro cursor-pointer">En
-                                    stock</label>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <input type="checkbox" id="destacado" name="destacado" value="1"
-                                    class="w-4 h-4 md:w-5 md:h-5 border border-gray-400 rounded outline-none accent-vino cursor-pointer">
-                                <label for="destacado"
-                                    class="text-sm md:text-base text-violeta-oscuro cursor-pointer">Destacados</label>
+                                <label for="stock" class="text-sm md:text-base text-violeta-oscuro cursor-pointer">Disponible</label>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cerrar = document.getElementById('cruz-cerrar');
     const fondoMenu = document.getElementById('fondo-menu');
 
+    if (!menu || !menuLateral || !cerrar || !fondoMenu) return;
+
     function abrirMenu() {
         menuLateral.classList.add('open');
         fondoMenu.classList.remove('opacity-0', 'invisible');
