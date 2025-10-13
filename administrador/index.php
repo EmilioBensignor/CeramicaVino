@@ -27,11 +27,6 @@
         <section
             class="w-full max-w-[1375px] flex flex-col items-center gap-6 md:gap-10 2xl:gap-12 p-6 md:p-10 lg:p-16 2xl:px-0">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Administrar Productos</h1>
-            <?php
-            if (isset($_GET['ok_carga'])) {
-                echo '<p class="text-sm md:text-base text-vino">Producto cargado correctamente.</p>';
-            }
-            ?>
             <form action="cargar_productos.php" method="POST" enctype="multipart/form-data"
                 class="w-full max-w-md lg:max-w-3xl flex flex-col gap-4">
                 <div class="flex flex-col lg:flex-row gap-4 lg:gap-6">
@@ -125,6 +120,51 @@
             </div>
         </div>
     </footer>
+    <!-- Modal exito carga -->
+    <?php if (isset($_GET['ok_carga'])) { ?>
+        <div id="modal-exito" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
+                <div class="w-full flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold text-vino">¡Producto Cargado!</h3>
+                    <button onclick="cerrarModalExito()"
+                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
+                </div>
+                <p class="text-dark">El producto se ha cargado correctamente.</p>
+                <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
+            </div>
+        </div>
+        <script>document.body.style.overflow = 'hidden';</script>
+    <?php } ?>
+    <!-- Modal error formato -->
+    <?php if (isset($_GET['error_formato'])) { ?>
+        <div id="modal-exito" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
+                <div class="w-full flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold text-vino">Formato Inválido</h3>
+                    <button onclick="cerrarModalExito()"
+                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
+                </div>
+                <p class="text-dark">Solo se permiten imágenes en formato JPG, GIF o PNG.</p>
+                <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
+            </div>
+        </div>
+        <script>document.body.style.overflow = 'hidden';</script>
+    <?php } ?>
+    <!-- Modal error tamaño -->
+    <?php if (isset($_GET['error_tamano'])) { ?>
+        <div id="modal-exito" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
+                <div class="w-full flex justify-between items-center">
+                    <h3 class="text-2xl font-semibold text-vino">Imagen Demasiado Grande</h3>
+                    <button onclick="cerrarModalExito()"
+                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
+                </div>
+                <p class="text-dark">La imagen no debe superar los 195KB (200000 bytes).</p>
+                <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
+            </div>
+        </div>
+        <script>document.body.style.overflow = 'hidden';</script>
+    <?php } ?>
     <script src="../main.js"></script>
 </body>
 
