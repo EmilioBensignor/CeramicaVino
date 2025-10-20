@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,7 +32,11 @@
                 <ul class="flex items-center gap-5 2xl:gap-8">
                     <li><a href="./piezas.php" class="lg:text-xl">Piezas</a></li>
                     <li><a href="./nosotros.php" class="lg:text-xl">Nosotros</a></li>
-                    <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
+                    <?php if (isset($_SESSION['usuarios'])) { ?>
+                        <li class="flex"><a href="./componentes/salir.php" class="login">Cerrar Sesión</a></li>
+                    <?php } else { ?>
+                        <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
+                    <?php } ?>
                 </ul>
             </nav>
         </div>
@@ -54,9 +59,15 @@
                     <li>
                         <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
                     </li>
-                    <li class="flex">
-                        <a href="./login.php" class="login">Iniciar Sesión</a>
-                    </li>
+                    <?php if (isset($_SESSION['usuarios'])) { ?>
+                        <li class="flex">
+                            <a href="./login.php" class="login">Iniciar Sesión</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="flex">
+                            <a href="./componentes/salir.php" class="login">Cerrar Sesión</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </nav>
         </div>
@@ -140,21 +151,6 @@
                         class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
                 </div>
                 <p class="text-dark">¡Gracias por registrarte! Ahora puedes iniciar sesión.</p>
-                <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
-            </div>
-        </div>
-        <script>document.body.style.overflow = 'hidden';</script>
-    <?php } ?>
-    <!-- Modal exito ingreso -->
-    <?php if (isset($_GET['ok_ingreso'])) { ?>
-        <div id="modal-exito" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-            <div class="w-[90%] max-w-sm flex flex-col items-center gap-6 bg-white rounded-2xl p-6">
-                <div class="w-full flex justify-between items-center">
-                    <h3 class="text-2xl font-semibold text-vino">¡Ingreso Exitoso!</h3>
-                    <button onclick="cerrarModalExito()"
-                        class="text-2xl cursor-pointer bg-transparent border-none">&times;</button>
-                </div>
-                <p class="text-dark">¡Has iniciado sesión correctamente!</p>
                 <button onclick="cerrarModalExito()" class="boton-primario w-full">Cerrar</button>
             </div>
         </div>

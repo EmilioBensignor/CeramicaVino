@@ -13,10 +13,8 @@ $img_tmp = $_FILES['image']['tmp_name'];
 
 if ($img_type != 'image/jpeg' && $img_type != 'image/gif' && $img_type != 'image/png') {
     header("Location: index.php?error_formato");
-    exit();
 } else if ($img_size > 200000) {
     header("Location: index.php?error_tamano");
-    exit();
 } else {
     include("../componentes/conexion.php");
 

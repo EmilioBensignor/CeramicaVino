@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,7 +32,11 @@
                 <ul class="flex items-center gap-5 2xl:gap-8">
                     <li><a href="./piezas.php" class="lg:text-xl">Piezas</a></li>
                     <li><a href="./nosotros.php" class="lg:text-xl">Nosotros</a></li>
-                    <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
+                    <?php if (isset($_SESSION['usuarios'])) { ?>
+                        <li class="flex"><a href="./componentes/salir.php" class="login">Cerrar Sesión</a></li>
+                    <?php } else { ?>
+                        <li class="flex"><a href="./login.php" class="login">Iniciar Sesión</a></li>
+                    <?php } ?>
                 </ul>
             </nav>
         </div>
@@ -54,9 +59,15 @@
                     <li>
                         <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
                     </li>
-                    <li class="flex">
-                        <a href="./login.php" class="login">Iniciar Sesión</a>
-                    </li>
+                    <?php if (isset($_SESSION['usuarios'])) { ?>
+                        <li class="flex">
+                            <a href="./login.php" class="login">Iniciar Sesión</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="flex">
+                            <a href="./componentes/salir.php" class="login">Cerrar Sesión</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </nav>
         </div>
