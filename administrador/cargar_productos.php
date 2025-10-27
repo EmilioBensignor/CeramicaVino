@@ -1,10 +1,10 @@
 <?php
 $name = $_POST['name'];
 $category = $_POST['category'];
-$medidas = $_POST['medidas'];
+$sizes = $_POST['sizes'];
 $stock = $_POST['stock'];
-$precio = $_POST['precio'];
-$descripcion = $_POST['descripcion'];
+$price = $_POST['price'];
+$description = $_POST['description'];
 
 // $img_name = $_FILES['image']['name'];
 $img_type = $_FILES['image']['type'];
@@ -22,7 +22,7 @@ if ($img_type != 'image/jpeg' && $img_type != 'image/gif' && $img_type != 'image
     $cod_img_content = fread($cod_img, $img_size);
     $cod_img_table = addslashes($cod_img_content);
 
-    mysqli_query($datosDB, "INSERT INTO piezas VALUES (DEFAULT, '$name', '$category', '$cod_img_table', '$img_type', '$medidas', $stock, $precio, '$descripcion')");
+    mysqli_query($datosDB, "INSERT INTO piezas VALUES (DEFAULT, '$name', '$category', '$cod_img_table', '$img_type', '$sizes', $stock, $price, '$description')");
 
     header("Location: index.php?ok_carga");
 }

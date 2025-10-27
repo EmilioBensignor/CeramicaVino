@@ -186,25 +186,30 @@
             <section class="w-full max-w-[1375px] flex flex-col gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                     <!-- Card de Pieza -->
-                    <article
-                        class="flex flex-col bg-blanco rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <img src="./images/piezas/Taza.png" alt="Taza artesanal cerámica"
-                            class="w-full h-full max-h-96 object-cover hover:scale-105 transition-transform duration-300">
-                        <div class="flex flex-col gap-2 p-4">
-                            <p class="text-xs md:text-sm text-vino font-semibold uppercase tracking-wide">Tazas</p>
-                            <h3 class="text-xl md:text-xl font-bold text-violeta-oscuro">Taza Rustic Beige</h3>
-                            <p class="text-sm">10cm x 8cm</p>
+                    <?php
+                    include("componentes/conexion.php");
+                    $consultar_piezas = mysqli_query($datosDB, "SELECT * FROM piezas");
+                    while ($listar_piezas = mysqli_fetch_assoc($consultar_piezas)) {
+                        ?>
+                        <article
+                            class="flex flex-col bg-blanco rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <img src="componentes/img_pieza.php?id=<?php echo $listar_piezas['id']; ?>" alt="<?php echo $listar_piezas['name']; ?>"
+                                class="w-full h-full max-h-96 object-cover hover:scale-105 transition-transform duration-300">
+                            <div class="flex flex-col gap-2 p-4">
+                                <p class="text-xs md:text-sm text-vino font-semibold uppercase tracking-wide">
+                                    <?php echo $listar_piezas['category']; ?></p>
+                                <h3 class="text-xl md:text-xl font-bold text-violeta-oscuro">
+                                    <?php echo $listar_piezas['name']; ?></h3>
+                                <p class="text-sm"><?php echo $listar_piezas['description']; ?></p>
 
-                            <p class="text-sm md:text-base text-violeta-oscuro">
-                                Taza artesanal hecha a mano con arcilla natural. Acabado mate con tonos tierra. Perfecta
-                                para café o té.
-                            </p>
+                                <p class="text-sm md:text-base text-violeta-oscuro"><?php echo $listar_piezas['sizes']; ?></p>
 
-                            <div class="border-t border-gray-200 pt-3">
-                                <p class="text-2xl font-bold text-vino">$4.500</p>
+                                <div class="border-t border-gray-200 pt-3">
+                                    <p class="text-2xl font-bold text-vino">$<?php echo number_format($listar_piezas['price'], 0, '.', '.'); ?></p>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
+                    <?php } ?>
                 </div>
             </section>
             <!-- Contacto -->
@@ -220,10 +225,13 @@
             </section>
             <!-- Usuario no loggeado -->
         <?php } else { ?>
-            <section class="w-full max-w-[1375px] flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">Descubrí nuestro catálogo completo</h2>
+            <section
+                class="w-full max-w-[1375px] flex flex-col items-center text-center gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">Descubrí nuestro catálogo
+                    completo</h2>
                 <p class="text-base sm:text-lg md:text-xl text-violeta-oscuro max-w-3xl">
-                    Iniciá sesión para explorar todas nuestras piezas únicas de cerámica artesanal. Tazas, bowls, platos y mucho más te están esperando.
+                    Iniciá sesión para explorar todas nuestras piezas únicas de cerámica artesanal. Tazas, bowls, platos y
+                    mucho más te están esperando.
                 </p>
                 <a href="./login.php" class="boton-primario sm:text-xl md:text-xl sm:!py-4 sm:!px-16">Iniciar Sesión</a>
             </section>

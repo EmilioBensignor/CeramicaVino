@@ -64,10 +64,10 @@
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:bg-vino file:text-blanco hover:file:bg-violeta-oscuro">
                     </div>
                     <div class="lg:w-1/2">
-                        <label for="medidas"
+                        <label for="sizes"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Medidas
                             <span class="text-vino">*</span></label>
-                        <input type="text" id="medidas" name="medidas"
+                        <input type="text" id="sizes" name="sizes"
                             placeholder="Ej: 10cm x 15cm" required maxlength="50"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                     </div>
@@ -83,10 +83,10 @@
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                     </div>
                     <div class="lg:w-1/2">
-                        <label for="precio"
+                        <label for="price"
                             class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Precio
                             <span class="text-vino">*</span></label>
-                        <input type="number" id="precio" name="precio" min="0" step="0.01" required
+                        <input type="number" id="price" name="price" min="0" step="0.01" required
                             placeholder="0.00"
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                     </div>
@@ -94,10 +94,10 @@
 
                 <!-- Descripción -->
                 <div>
-                    <label for="descripcion"
+                    <label for="description"
                         class="block text-sm lg:text-base 2xl:text-xl text-violeta-oscuro mb-1">Descripción
                         <span class="text-vino">*</span></label>
-                    <textarea id="descripcion" name="descripcion" rows="4" required maxlength="500"
+                    <textarea id="description" name="description" rows="4" required maxlength="500"
                         placeholder="Descripción del producto"
                         class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3 resize-none"></textarea>
                 </div>
