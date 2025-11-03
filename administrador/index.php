@@ -46,11 +46,12 @@
                         <select id="category" name="category" required
                             class="w-full text-xs lg:text-base 2xl:text-xl border border-gray-400 rounded-lg outline-none p-3">
                             <option value="">Seleccione una categoría</option>
-                            <option value="taza">Taza</option>
-                            <option value="cuenco">Cuenco</option>
-                            <option value="plato">Plato</option>
-                            <option value="bowl">Bowl</option>
-                            <option value="maceta">Maceta</option>
+                            <option value="taza">Tazas</option>
+                            <option value="bowl">Bowls</option>
+                            <option value="plato">Platos</option>
+                            <option value="vaso">Vasos</option>
+                            <option value="jarra">Jarras</option>
+                            <option value="otro">Otros</option>
                         </select>
                     </div>
                 </div>

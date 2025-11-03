@@ -119,6 +119,14 @@ h3,
     padding: 0.875rem 3rem;
 }
 
+.boton-reset {
+    background: none;
+    border: none;
+    color: var(--color-violeta-oscuro);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .login {
     background-color: var(--color-lila);
     border: none;

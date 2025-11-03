@@ -95,121 +95,157 @@
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-violeta-oscuro">Explorá nuestras creaciones
                 </h2>
                 <!-- Filtros -->
-                <div class="w-full flex flex-col lg:flex-row gap-4">
-                    <div class="lg:w-1/2 md:flex md:justify-between md:gap-4">
-                        <div class="md:w-1/2 flex flex-col items-start gap-2">
-                            <label for="search" class="text-sm md:text-base text-violeta-oscuro font-medium">Buscar</label>
-                            <input type="text" id="search" name="search" placeholder="Buscar piezas..."
-                                class="w-full text-sm md:text-base bg-white border border-gray-400 rounded-lg outline-none p-3">
-                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-search">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                                    class="flex-shrink-0 text-red-500">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
-                                </svg>
-                                <p class="text-red-500 text-xs"></p>
+                <form method="POST" action="piezas.php#piezas" id="filtros-form" class="w-full">
+                    <div class="w-full flex flex-col lg:flex-row gap-4">
+                        <div class="lg:w-1/2 md:flex md:justify-between md:gap-4">
+                            <div class="md:w-1/2 flex flex-col items-start gap-2">
+                                <label for="search"
+                                    class="text-sm md:text-base text-violeta-oscuro font-medium">Buscar</label>
+                                <input type="text" id="search" name="search" placeholder="Buscar piezas..."
+                                    class="w-full text-sm md:text-base bg-white border border-gray-400 rounded-lg outline-none p-3"
+                                    value="<?php echo ($_POST['limpiar'] || !isset($_POST['search'])) ? '' : $_POST['search']; ?>">
+                                <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                        class="flex-shrink-0 text-red-500">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                    </svg>
+                                    <p class="text-red-500 text-xs"></p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 flex flex-col items-start gap-2">
+                                <label for="categoria"
+                                    class="text-sm md:text-base text-violeta-oscuro font-medium">Categoría</label>
+                                <select id="categoria" name="categoria"
+                                    class="w-full text-sm md:text-base border border-gray-400 rounded-lg outline-none p-3 bg-white text-violeta-oscuro cursor-pointer hover:border-vino focus:border-vino transition-colors">
+                                    <option value="">Todas las categorías</option>
+                                    <option value="taza" <?php echo ($_POST['limpiar'] || $_POST['categoria'] != 'taza') ? '' : 'selected'; ?>>Tazas</option>
+                                    <option value="bowl" <?php echo ($_POST['limpiar'] || $_POST['categoria'] != 'bowl') ? '' : 'selected'; ?>>Bowls</option>
+                                    <option value="plato" <?php echo ($_POST['limpiar'] || $_POST['categoria'] != 'plato') ? '' : 'selected'; ?>>Platos</option>
+                                    <option value="vaso" <?php echo ($_POST['limpiar'] || $_POST['categoria'] != 'vaso') ? '' : 'selected'; ?>>Vasos</option>
+                                    <option value="jarra" <?php echo ($_POST['limpiar'] || $_POST['categoria'] != 'jarra') ? '' : 'selected'; ?>>Jarras</option>
+                                    <option value="otro" <?php echo ($_POST['limpiar'] || $_POST['categoria'] != 'otro') ? '' : 'selected'; ?>>Otros</option>
+                                </select>
+                                <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-categoria">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                        class="flex-shrink-0 text-red-500">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                    </svg>
+                                    <p class="text-red-500 text-xs"></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="md:w-1/2 flex flex-col items-start gap-2">
-                            <label for="categoria"
-                                class="text-sm md:text-base text-violeta-oscuro font-medium">Categoría</label>
-                            <select id="categoria" name="categoria"
-                                class="w-full text-sm md:text-base border border-gray-400 rounded-lg outline-none p-3 bg-white text-violeta-oscuro cursor-pointer hover:border-vino focus:border-vino transition-colors">
-                                <option value="">Todas las categorías</option>
-                                <option value="tazas">Tazas</option>
-                                <option value="bowls">Bowls</option>
-                                <option value="platos">Platos</option>
-                                <option value="vasos">Vasos</option>
-                                <option value="jarras">Jarras</option>
-                                <option value="otros">Otros</option>
-                            </select>
-                            <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-categoria">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                                    class="flex-shrink-0 text-red-500">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
-                                </svg>
-                                <p class="text-red-500 text-xs"></p>
+                        <div class="lg:w-1/2 md:flex md:justify-between md:gap-4">
+                            <div class="md:w-1/2 flex flex-col items-start gap-2">
+                                <p class="text-sm md:text-base text-violeta-oscuro font-medium">Precio</p>
+                                <div class="flex gap-3 md:gap-4">
+                                    <div class="flex-1 flex flex-col">
+                                        <label for="precio-min" class="sr-only">Precio mínimo</label>
+                                        <input type="number" id="precio-min" name="precio-min" placeholder="Mínimo" min="0"
+                                            class="w-full text-sm md:text-base bg-white border border-gray-400 rounded-lg outline-none p-3"
+                                            value="<?php echo ($_POST['limpiar'] || !isset($_POST['precio-min'])) ? '' : $_POST['precio-min']; ?>">
+                                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-precio-min">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 24 24" class="flex-shrink-0 text-red-500">
+                                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                            </svg>
+                                            <p class="text-red-500 text-xs"></p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 flex flex-col">
+                                        <label for="precio-max" class="sr-only">Precio máximo</label>
+                                        <input type="number" id="precio-max" name="precio-max" placeholder="Máximo" min="0"
+                                            class="w-full text-sm md:text-base bg-white border border-gray-400 rounded-lg outline-none p-3"
+                                            value="<?php echo ($_POST['limpiar'] || !isset($_POST['precio-max'])) ? '' : $_POST['precio-max']; ?>">
+                                        <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-precio-max">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                                                viewBox="0 0 24 24" class="flex-shrink-0 text-red-500">
+                                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
+                                            </svg>
+                                            <p class="text-red-500 text-xs"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 flex justify-center items-center gap-4">
+                                <button type="submit" class="boton-primario">Filtrar</button>
+                                <button type="submit" name="limpiar" value="1" class="boton-reset">Limpiar</button>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 md:flex md:justify-between md:gap-4">
-                        <div class="md:w-1/2 flex flex-col items-start gap-2">
-                            <p class="text-sm md:text-base text-violeta-oscuro font-medium">Precio</p>
-                            <div class="flex gap-3 md:gap-4">
-                                <div class="flex-1 flex flex-col">
-                                    <label for="precio-min" class="sr-only">Precio mínimo</label>
-                                    <input type="number" id="precio-min" name="precio-min" placeholder="Mínimo" min="0"
-                                        class="w-full text-sm md:text-base bg-white border border-gray-400 rounded-lg outline-none p-3">
-                                    <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-precio-min">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                                            class="flex-shrink-0 text-red-500">
-                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2"
-                                                d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
-                                        </svg>
-                                        <p class="text-red-500 text-xs"></p>
-                                    </div>
-                                </div>
-                                <div class="flex-1 flex flex-col">
-                                    <label for="precio-max" class="sr-only">Precio máximo</label>
-                                    <input type="number" id="precio-max" name="precio-max" placeholder="Máximo" min="0"
-                                        class="w-full text-sm md:text-base bg-white border border-gray-400 rounded-lg outline-none p-3">
-                                    <div class="w-full min-h-0.5 flex gap-1 invisible mt-1" id="error-precio-max">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
-                                            class="flex-shrink-0 text-red-500">
-                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2"
-                                                d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m9-4v4m0 4h.01" />
-                                        </svg>
-                                        <p class="text-red-500 text-xs"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="md:w-1/2 flex flex-col items-start gap-3">
-                            <p class="text-sm md:text-base text-violeta-oscuro font-medium">En stock</p>
-
-                            <div class="md:flex md:gap-4">
-                                <div class="flex items-center gap-2">
-                                    <input type="checkbox" id="stock" name="stock" value="1"
-                                        class="w-4 h-4 md:w-5 md:h-5 border border-gray-400 rounded outline-none accent-vino cursor-pointer">
-                                    <label for="stock"
-                                        class="text-sm md:text-base text-violeta-oscuro cursor-pointer">Disponible</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </section>
             <!-- Piezas -->
-            <section class="w-full max-w-[1375px] flex flex-col gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
+            <section id="piezas" class="w-full max-w-[1375px] flex flex-col gap-6 md:gap-10 p-6 md:p-10 lg:p-16 2xl:px-0">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-                    <!-- Card de Pieza -->
                     <?php
                     include("componentes/conexion.php");
-                    $consultar_piezas = mysqli_query($datosDB, "SELECT * FROM piezas");
-                    while ($listar_piezas = mysqli_fetch_assoc($consultar_piezas)) {
-                        ?>
-                        <article
-                            class="flex flex-col bg-blanco rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                            <img src="componentes/img_pieza.php?id=<?php echo $listar_piezas['id']; ?>" alt="<?php echo $listar_piezas['name']; ?>"
-                                class="w-full h-full max-h-96 object-cover hover:scale-105 transition-transform duration-300">
-                            <div class="flex flex-col gap-2 p-4">
-                                <p class="text-xs md:text-sm text-vino font-semibold uppercase tracking-wide">
-                                    <?php echo $listar_piezas['category']; ?></p>
-                                <h3 class="text-xl md:text-xl font-bold text-violeta-oscuro">
-                                    <?php echo $listar_piezas['name']; ?></h3>
-                                <p class="text-sm"><?php echo $listar_piezas['description']; ?></p>
 
-                                <p class="text-sm md:text-base text-violeta-oscuro"><?php echo $listar_piezas['sizes']; ?></p>
+                    if ($_POST['limpiar']) {
+                        $sql = "SELECT * FROM piezas WHERE stock > 0";
+                    } else {
+                        $sql = "SELECT * FROM piezas WHERE stock > 0";
 
-                                <div class="border-t border-gray-200 pt-3">
-                                    <p class="text-2xl font-bold text-vino">$<?php echo number_format($listar_piezas['price'], 0, '.', '.'); ?></p>
+                        if ($_POST['search']) {
+                            $search = $_POST['search'];
+                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND (name LIKE '%$search%' OR description LIKE '%$search%')";
+                        }
+
+                        if ($_POST['categoria']) {
+                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND category = '" . $_POST['categoria'] . "'";
+                        }
+
+                        if ($_POST['precio-min']) {
+                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND price >= " . $_POST['precio-min'];
+                        }
+
+                        if ($_POST['precio-max']) {
+                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND price <= " . $_POST['precio-max'];
+                        }
+                    }
+
+                    $consultar_piezas = mysqli_query($datosDB, $sql);
+                    $hay_resultados = mysqli_num_rows($consultar_piezas) > 0;
+
+                    if ($hay_resultados) {
+                        while ($listar_piezas = mysqli_fetch_assoc($consultar_piezas)) {
+                            ?>
+                            <!-- Card de Pieza -->
+                            <article
+                                class="flex flex-col bg-blanco rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                                <img src="componentes/img_pieza.php?id=<?php echo $listar_piezas['id']; ?>"
+                                    alt="<?php echo $listar_piezas['name']; ?>"
+                                    class="w-full h-full max-h-64 object-contain hover:scale-105 transition-transform duration-300">
+                                <div class="flex flex-col gap-2 p-4">
+                                    <p class="text-xs md:text-sm text-vino font-semibold uppercase tracking-wide">
+                                        <?php echo $listar_piezas['category']; ?>
+                                    </p>
+                                    <h3 class="text-xl md:text-xl font-bold text-violeta-oscuro">
+                                        <?php echo $listar_piezas['name']; ?>
+                                    </h3>
+                                    <p class="text-sm"><?php echo $listar_piezas['description']; ?></p>
+
+                                    <p class="text-sm md:text-base text-violeta-oscuro"><?php echo $listar_piezas['sizes']; ?> cm</p>
+
+                                    <div class="border-t border-gray-200 pt-3">
+                                        <p class="text-2xl font-bold text-vino">
+                                            $<?php echo number_format($listar_piezas['price'], 0, '.', '.'); ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    <?php } ?>
+                            </article>
+                            <?php
+                        }
+                    } else {
+                        echo '<p class="col-span-full text-center text-violeta-oscuro text-lg">No se encontraron piezas con los filtros seleccionados.</p>';
+                    }
+                    ?>
                 </div>
             </section>
             <!-- Contacto -->
