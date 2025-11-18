@@ -61,11 +61,11 @@
                     </li>
                     <?php if (isset($_SESSION['usuarios'])) { ?>
                         <li class="flex">
-                            <a href="./login.php" class="login">Iniciar Sesión</a>
+                            <a href="./componentes/salir.php" class="login">Cerrar Sesión</a>
                         </li>
                     <?php } else { ?>
                         <li class="flex">
-                            <a href="./componentes/salir.php" class="login">Cerrar Sesión</a>
+                            <a href="./login.php" class="login">Iniciar Sesión</a>
                         </li>
                     <?php } ?>
                 </ul>
@@ -235,7 +235,8 @@
                                     </h3>
                                     <p class="text-sm"><?php echo $listar_piezas['description']; ?></p>
 
-                                    <p class="text-sm md:text-base text-violeta-oscuro"><?php echo $listar_piezas['sizes']; ?> cm</p>
+                                    <p class="text-sm md:text-base text-violeta-oscuro"><?php echo $listar_piezas['sizes']; ?> cm
+                                    </p>
 
                                     <div class="border-t border-gray-200 pt-3">
                                         <p class="text-2xl font-bold text-vino">

@@ -47,29 +47,28 @@
             <button id="cruz-cerrar"
                 class="absolute top-4 right-6 text-3xl md:text-4xl text-blanco hover:text-primary transition-colors">
                 &times;
-            </button>
-            <nav class="mt-6 md:mt-10">
-                <ul class="flex flex-col gap-4 md:gap-6 text-blanco">
-                    <li>
-                        <a href="./index.php" class="md:text-xl">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="./piezas.php" class="md:text-xl">Piezas</a>
-                    </li>
-                    <li>
-                        <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
-                    </li>
-                    <?php if (isset($_SESSION['usuarios'])) { ?>
-                        <li class="flex">
-                            <a href="./login.php" class="login">Iniciar Sesión</a>
+                <nav class="mt-6 md:mt-10">
+                    <ul class="flex flex-col gap-4 md:gap-6 text-blanco">
+                        <li>
+                            <a href="./index.php" class="md:text-xl">Inicio</a>
                         </li>
-                    <?php } else { ?>
-                        <li class="flex">
-                            <a href="./componentes/salir.php" class="login">Cerrar Sesión</a>
+                        <li>
+                            <a href="./piezas.php" class="md:text-xl">Piezas</a>
                         </li>
-                    <?php } ?>
-                </ul>
-            </nav>
+                        <li>
+                            <a href="./nosotros.php" class="md:text-xl">Nosotros</a>
+                        </li>
+                        <?php if (isset($_SESSION['usuarios'])) { ?>
+                            <li class="flex">
+                                <a href="./componentes/salir.php" class="login">Cerrar Sesión</a>
+                            </li>
+                        <?php } else { ?>
+                            <li class="flex">
+                                <a href="./login.php" class="login">Iniciar Sesión</a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </nav>
         </div>
     </div>
     <main class="flex flex-col items-center text-violeta-extra-oscuro">
