@@ -188,26 +188,29 @@
                     <?php
                     include("componentes/conexion.php");
 
-                    if ($_POST['limpiar']) {
-                        $sql = "SELECT * FROM piezas WHERE stock > 0";
-                    } else {
-                        $sql = "SELECT * FROM piezas WHERE stock > 0";
+                    $sql = "SELECT * FROM piezas WHERE stock > 0";
+                    $condiciones = [];
 
+                    if (!$_POST['limpiar']) {
                         if ($_POST['search']) {
                             $search = $_POST['search'];
-                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND (name LIKE '%$search%' OR description LIKE '%$search%')";
+                            $condiciones[] = "(name LIKE '%$search%' OR description LIKE '%$search%')";
                         }
 
                         if ($_POST['categoria']) {
-                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND category = '" . $_POST['categoria'] . "'";
+                            $condiciones[] = "category = '" . $_POST['categoria'] . "'";
                         }
 
                         if ($_POST['precio-min']) {
-                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND price >= " . $_POST['precio-min'];
+                            $condiciones[] = "price >= " . $_POST['precio-min'];
                         }
 
                         if ($_POST['precio-max']) {
-                            $sql = "SELECT * FROM piezas WHERE stock > 0 AND price <= " . $_POST['precio-max'];
+                            $condiciones[] = "price <= " . $_POST['precio-max'];
+                        }
+
+                        if (!empty($condiciones)) {
+                            $sql .= " AND " . implode(" AND ", $condiciones);
                         }
                     }
 
